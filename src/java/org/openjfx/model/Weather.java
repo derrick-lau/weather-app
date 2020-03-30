@@ -122,5 +122,12 @@ public class Weather {
     public void setRain(double rain) {
         this.rain.set(rain);
     }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "month=" + month +
+                '}';
+    }
 }
     

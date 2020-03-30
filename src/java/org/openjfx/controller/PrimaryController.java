@@ -16,6 +16,8 @@ import org.openjfx.controller.abstractions.IPrimaryController;
 import org.openjfx.model.Weather;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PrimaryController extends AController implements IPrimaryController
@@ -43,8 +45,11 @@ public class PrimaryController extends AController implements IPrimaryController
 
         Factory.sideMenuController().sideMenuInitialization(mainPane, sidePane, menuButton);
 
-        // Add values to obsList
+
+        //Setup Table
         setCellValues();
+
+        // Add values to obsList
         Weather w1 = new Weather("Cardiff",2019, 1, 2.99, 3.44,10,6.99 );
         Weather w2 = new Weather("Cardiff",2019, 1, 2.99, 3.44,10,6.99 );
         Weather w3 = new Weather("noWhere",2019, 1, 2.99, 3.44,10,6.99 );
@@ -52,32 +57,34 @@ public class PrimaryController extends AController implements IPrimaryController
 
         observableList.addAll(w1,w2, w3, w4);
 
-        // Init filteredList
+        // Init, sort and  bind filteredList, then add it to table
         FilteredList<Weather> filteredList = new FilteredList<>(observableList, b -> true);
 
         // Filter changes using filterField
         filterChanges(filteredList);
 
         // Sort filteredList.
-        SortedList<Weather> sortedData = new SortedList<>(filteredList);
+        SortedList<Weather> sortedList = new SortedList<>(filteredList);
 
         // Bind the SortedList comparator to the TableView comparator
-        sortedData.comparatorProperty().bind(tableView.comparatorProperty());
+        sortedList.comparatorProperty().bind(tableView.comparatorProperty());
 
-        // Add sorted data to the table.
-        tableView.setItems(sortedData);
+        // Add sortedList to Table
+        tableView.setItems(sortedList);
 
 
     }
 
-    private void setCellValues ()
+    private void setCellValues()
     {
-        station.setCellValueFactory(new PropertyValueFactory<>("station"));
-        month.setCellValueFactory(new PropertyValueFactory<>("month"));
-        tmax.setCellValueFactory(new PropertyValueFactory<>("tmax"));
-        tmin.setCellValueFactory(new PropertyValueFactory<>("tmin"));
-        af.setCellValueFactory(new PropertyValueFactory<>("af"));
-        rain.setCellValueFactory(new PropertyValueFactory<>("rain"));
+
+        station.setCellValueFactory(new PropertyValueFactory<Weather, String>("station"));
+        month.setCellValueFactory(new PropertyValueFactory<Weather, String>("month"));
+        tmax.setCellValueFactory(new PropertyValueFactory<Weather, String>("tmax"));
+        tmin.setCellValueFactory(new PropertyValueFactory<Weather, String>("tmin"));
+        af.setCellValueFactory(new PropertyValueFactory<Weather, String>("af"));
+        rain.setCellValueFactory(new PropertyValueFactory<Weather, String>("rain"));
+
     }
 
     private void filterChanges (FilteredList<Weather> filteredList)
@@ -90,12 +97,13 @@ public class PrimaryController extends AController implements IPrimaryController
                     return true;
                 }
 
-                String lowerCaseFilter = newValue.toLowerCase();
+                String lowerCase = newValue.toLowerCase();
 
-                if (weather.getStation().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+                if (weather.getStation().toLowerCase().indexOf(lowerCase) != -1 ) {
                     return true;
-                } else
+                } else {
                     return false;
+                }
             });
         });
     }

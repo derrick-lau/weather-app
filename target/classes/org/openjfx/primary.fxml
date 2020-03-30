@@ -28,14 +28,14 @@
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <columns>
                     <TableColumn fx:id="station" prefWidth="223.0" text="Meteorological Station" />
-                    <TableColumn fx:id="month" prefWidth="223.0" text="Meteorological Station" />
+                    <TableColumn fx:id="month" prefWidth="223.0" text="Month" />
                     <TableColumn fx:id="tmax" prefWidth="85.0" text="tmax" />
                     <TableColumn fx:id="tmin" prefWidth="106.0" text="tmin" />
                     <TableColumn fx:id="af" prefWidth="217.0" text="Total air frost days" />
                     <TableColumn fx:id="rain" prefWidth="190.0" text="Total rainfall" />
                 </columns>
             </TableView>
-            <TextField fx:id="filterField" alignment="TOP_LEFT" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="10.0" layoutY="9.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="92.0" promptText="Search by any keyword" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="filterField" alignment="TOP_LEFT" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="10.0" layoutY="9.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="92.0" promptText="filter by station" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -45,7 +45,7 @@
                <GridPane.margin>
                   <Insets right="600.0" />
                </GridPane.margin></TextField>
-            <Label prefHeight="104.0" prefWidth="880.0" text="                                     An Overview of weather from 2019" GridPane.columnIndex="1">
+            <Label prefHeight="104.0" prefWidth="880.0" text="                                     An Overview of weather in 2019" GridPane.columnIndex="1">
                <font>
                   <Font size="21.0" />
                </font>

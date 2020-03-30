@@ -28,7 +28,7 @@
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <columns>
                     <TableColumn fx:id="station" prefWidth="223.0" text="Meteorological Station" />
-                    <TableColumn fx:id="month" prefWidth="223.0" text="Meteorological Station" />
+                    <TableColumn fx:id="month" prefWidth="223.0" text="Month" />
                     <TableColumn fx:id="tmax" prefWidth="85.0" text="tmax" />
                     <TableColumn fx:id="tmin" prefWidth="106.0" text="tmin" />
                     <TableColumn fx:id="af" prefWidth="217.0" text="Total air frost days" />
