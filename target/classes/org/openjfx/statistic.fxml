@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.chart.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.control.Button?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.StatisticController">
     <children>
@@ -39,23 +29,50 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <LineChart prefHeight="478.0" prefWidth="905.0">
+                              <LineChart fx:id="lineChart" legendSide="RIGHT" prefHeight="528.0" prefWidth="880.0">
                                 <xAxis>
-                                  <CategoryAxis side="BOTTOM" />
+                                  <CategoryAxis label="Month" side="BOTTOM" />
                                 </xAxis>
                                 <yAxis>
-                                  <NumberAxis prefHeight="426.0" prefWidth="100.0" side="LEFT" />
+                                  <NumberAxis label="Number" prefHeight="426.0" prefWidth="100.0" side="LEFT" />
                                 </yAxis>
                               </LineChart>
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
-                <Tab text="chart">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
+                  <Tab text="Area Chart">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AreaChart fx:id="areaChart" layoutX="1.0" layoutY="-1.0" legendSide="RIGHT" prefHeight="522.0" prefWidth="881.0">
+                                <xAxis>
+                                  <CategoryAxis label="Month" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis label="Number" side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Scatter Chart">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScatterChart fx:id="scatterChart" legendSide="RIGHT" prefHeight="522.0" prefWidth="882.0">
+                                <xAxis>
+                                  <CategoryAxis label="Month" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis label="Number" side="LEFT" />
+                                </yAxis>
+                              </ScatterChart>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
               </tabs>
             </TabPane>
                 <Label prefHeight="131.0" prefWidth="1217.0" text="                               Monthly Records in                     in" textAlignment="CENTER" GridPane.columnIndex="1">
@@ -73,7 +90,7 @@
                         <Insets right="-200.0" />
                     </GridPane.margin>
                 </ComboBox>
-            <Button mnemonicParsing="false" text="View" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <Button fx:id="view" mnemonicParsing="false" onAction="#viewChart" text="View" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
             </children>
         </GridPane>
         <AnchorPane fx:id="mainPane" layoutX="70.0" layoutY="180.0" opacity="0.32" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

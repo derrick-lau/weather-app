@@ -12,9 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.openjfx.Factory;
 import org.openjfx.controller.abstractions.AController;
-import org.openjfx.controller.abstractions.IController;
 import org.openjfx.model.Weather;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -82,7 +80,6 @@ public class PrimaryController extends AController
         tmin.setCellValueFactory(new PropertyValueFactory<Weather, String>("tmin"));
         af.setCellValueFactory(new PropertyValueFactory<Weather, String>("af"));
         rain.setCellValueFactory(new PropertyValueFactory<Weather, String>("rain"));
-
     }
 
     private void filterChanges (FilteredList<Weather> filteredList)

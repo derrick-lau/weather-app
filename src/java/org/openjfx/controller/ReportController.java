@@ -8,9 +8,6 @@ import java.util.ResourceBundle;
 
 public class ReportController extends AController
 {
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
