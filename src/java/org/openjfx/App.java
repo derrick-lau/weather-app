@@ -3,11 +3,8 @@ package org.openjfx;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.openjfx.services.DataManipulation;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.List;
 
 
 public class App extends Application

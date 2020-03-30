@@ -28,4 +28,9 @@ abstract public class AController implements IController
     public void switchToPrimary() throws IOException {
         App.setScene("primary");
     }
+
+    @Override
+    public void switchToReport() throws IOException {
+        App.setScene("report");
+    }
 }

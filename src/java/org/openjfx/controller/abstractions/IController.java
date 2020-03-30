@@ -17,4 +17,7 @@ public interface IController extends Initializable
 
     @FXML
     void switchToPrimary() throws IOException;
+
+    @FXML
+    void switchToReport() throws IOException;
 }

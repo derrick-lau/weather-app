@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.PrimaryController">
+    <children>
+      <BorderPane layoutY="59.0" prefHeight="639.0" prefWidth="1000.0">
+         <top>
+            <Label prefHeight="85.0" prefWidth="1009.0" text="                                                    Get a Report" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </top>
+         <left>
+            <Label prefHeight="382.0" prefWidth="147.0" text="   Select" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </left>
+         <bottom>
+            <Label prefHeight="145.0" prefWidth="1006.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+        <AnchorPane fx:id="mainPane" opacity="1" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <AnchorPane prefHeight="59.0" prefWidth="340.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <effect>
+                <DropShadow color="#d0d0d0" />
+            </effect>
+            <children>
+                <Label layoutX="467.0" layoutY="11.0" text="WeatherR">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fx:id="menuButton" fitHeight="20.0" fitWidth="30.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/hamburger.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="sidePane" blendMode="SRC_ATOP" layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="210.0" style="-fx-background-color: grey;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="790.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <GridPane layoutX="22.0" layoutY="125.0" prefHeight="573.0" prefWidth="154.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="358.0" minHeight="0.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="428.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="529.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="529.0" minHeight="10.0" prefHeight="364.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label onMouseClicked="#switchToStatistic" prefHeight="94.0" prefWidth="174.0" style="-fx-background-color: grey;" text="   Statistic" textAlignment="CENTER" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <Label onMouseClicked="#switchToReport" prefHeight="96.0" prefWidth="154.0" style="-fx-background-color: grey;" text="   Report" textAlignment="CENTER" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="280.0" onMouseClicked="#switchToPrimary" prefHeight="94.0" prefWidth="210.0" style="-fx-background-color: grey;" text="   Home" textAlignment="CENTER">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
