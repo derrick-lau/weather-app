@@ -6,7 +6,8 @@ import org.openjfx.controller.abstractions.AController;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ReportController extends AController {
+public class ReportController extends AController
+{
 
 
 
