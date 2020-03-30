@@ -58,7 +58,7 @@
                 </Tab>
               </tabs>
             </TabPane>
-                <Label prefHeight="131.0" prefWidth="1217.0" text="                               Monthly Weather in                     in" textAlignment="CENTER" GridPane.columnIndex="1">
+                <Label prefHeight="131.0" prefWidth="1217.0" text="                               Monthly Records in                     in" textAlignment="CENTER" GridPane.columnIndex="1">
                     <font>
                         <Font size="26.0" />
                     </font>
@@ -87,7 +87,7 @@
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
-                <ImageView fx:id="menuButton" fitHeight="20.0" fitWidth="30.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="menuButton" fitHeight="48.0" fitWidth="40.0" layoutX="13.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@img/hamburger.png" />
                     </image>

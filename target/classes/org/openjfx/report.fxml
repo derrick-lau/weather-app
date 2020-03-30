@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.PrimaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.ReportController">
+
     <children>
       <BorderPane layoutY="59.0" prefHeight="639.0" prefWidth="1000.0">
          <top>
@@ -39,7 +40,7 @@
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
-                <ImageView fx:id="menuButton" fitHeight="20.0" fitWidth="30.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="menuButton" fitHeight="48.0" fitWidth="40.0" layoutX="13.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@img/hamburger.png" />
                     </image>

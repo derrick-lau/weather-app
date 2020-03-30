@@ -4,10 +4,14 @@ import org.openjfx.Factory;
 import org.openjfx.repository.IFiles;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Files implements IFiles {
+
+
 
     @Override
     public List<String> getFileNames(String path)
@@ -19,6 +23,22 @@ public class Files implements IFiles {
         addFilesToList(files, entities);
 
         return entities;
+    }
+
+    public void readFile (String searchTerm, String path)
+    {
+
+        try
+        {
+            Scanner scanner = new Scanner(new File(path));
+            scanner.useDelimiter("[,\n]");
+
+
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     private File[] getFiles(String path)
