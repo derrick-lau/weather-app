@@ -18,7 +18,6 @@ public class App extends Application
         scene = new Scene(Factory.fxmlServices().load("primary"));
         stage.setScene(scene);
         stage.show();
-        Factory.fileServices().readFiles("/home/c1941440/Desktop/pj/weatherFX/src/resources/org/openjfx/__MACOSX");
     }
 
     public static void setScene(String fxml) throws  IOException
