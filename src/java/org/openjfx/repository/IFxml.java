@@ -6,5 +6,5 @@ import java.io.IOException;
 
 public interface IFxml
 {
-    Parent loadFXML(String fxml) throws IOException;
+    Parent load(String fxml) throws IOException;
 }

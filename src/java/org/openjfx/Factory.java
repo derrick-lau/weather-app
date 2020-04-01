@@ -1,9 +1,9 @@
 package org.openjfx;
 
+import org.openjfx.services.CsvFile;
 import org.openjfx.services.SideMenuScene;
 import org.openjfx.repository.ISideMenuScene;
 import org.openjfx.repository.IFxml;
-import org.openjfx.services.Files;
 import org.openjfx.services.Fxml;
 import org.openjfx.repository.IFiles;
 
@@ -15,7 +15,7 @@ public class Factory
     }
 
     public static IFiles fileServices () {
-        return new Files();
+        return new CsvFile();
     }
 
     public static ISideMenuScene sideMenuController () { return new SideMenuScene();}

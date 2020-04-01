@@ -15,15 +15,15 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException
     {
-        scene = new Scene(Factory.fxmlServices().loadFXML("primary"));
+        scene = new Scene(Factory.fxmlServices().load("primary"));
         stage.setScene(scene);
         stage.show();
-
+        Factory.fileServices().readFiles("/home/c1941440/Desktop/pj/weatherFX/src/resources/org/openjfx/__MACOSX");
     }
 
     public static void setScene(String fxml) throws  IOException
     {
-        scene.setRoot(Factory.fxmlServices().loadFXML(fxml));
+        scene.setRoot(Factory.fxmlServices().load(fxml));
     }
 
     public static void main(String[] args) {

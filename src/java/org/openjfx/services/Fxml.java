@@ -11,7 +11,7 @@ public class Fxml implements IFxml
 {
 
     @Override
-    public Parent loadFXML(String fxml) throws IOException
+    public Parent load(String fxml) throws IOException
     {
         return new FXMLLoader(App.class.getResource(fxml + ".fxml")).load();
     }

@@ -25,27 +25,27 @@
             <children>
             <TabPane prefHeight="553.0" prefWidth="992.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <tabs>
-                <Tab text="Line Chart">
+                <Tab fx:id="stackedBarChartTab" text="Stacked Bar Chart">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <LineChart fx:id="lineChart" legendSide="RIGHT" prefHeight="528.0" prefWidth="880.0">
+                              <StackedBarChart fx:id="stackedBarChart" animated="false" legendSide="RIGHT" prefHeight="528.0" prefWidth="880.0">
                                 <xAxis>
                                   <CategoryAxis label="Month" side="BOTTOM" />
                                 </xAxis>
                                 <yAxis>
                                   <NumberAxis label="Number" prefHeight="426.0" prefWidth="100.0" side="LEFT" />
                                 </yAxis>
-                              </LineChart>
+                              </StackedBarChart>
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
-                  <Tab text="Area Chart">
+                  <Tab fx:id="areaChartTab" text="Area Chart">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <AreaChart fx:id="areaChart" layoutX="1.0" layoutY="-1.0" legendSide="RIGHT" prefHeight="522.0" prefWidth="881.0">
+                              <AreaChart fx:id="areaChart" animated="false" layoutX="1.0" layoutY="-1.0" legendSide="RIGHT" prefHeight="522.0" prefWidth="881.0">
                                 <xAxis>
                                   <CategoryAxis label="Month" side="BOTTOM" />
                                 </xAxis>
@@ -57,11 +57,11 @@
                         </AnchorPane>
                     </content>
                   </Tab>
-                  <Tab text="Scatter Chart">
+                  <Tab fx:id="scatteredChartTab" text="Scatter Chart">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ScatterChart fx:id="scatterChart" legendSide="RIGHT" prefHeight="522.0" prefWidth="882.0">
+                              <ScatterChart fx:id="scatterChart" animated="false" legendSide="RIGHT" prefHeight="522.0" prefWidth="882.0">
                                 <xAxis>
                                   <CategoryAxis label="Month" side="BOTTOM" />
                                 </xAxis>
@@ -75,22 +75,31 @@
                   </Tab>
               </tabs>
             </TabPane>
-                <Label prefHeight="131.0" prefWidth="1217.0" text="                               Monthly Records in                     in" textAlignment="CENTER" GridPane.columnIndex="1">
+                <Label prefHeight="131.0" prefWidth="1217.0" text="              Monthly Records in                     in" textAlignment="CENTER" GridPane.columnIndex="1">
                     <font>
                         <Font size="26.0" />
                     </font>
                 </Label>
-                <ComboBox editable="true" prefHeight="35.0" prefWidth="165.0" promptText="Year" visibleRowCount="50" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-                    <GridPane.margin>
-                        <Insets right="-600.0" />
-                    </GridPane.margin>
-                </ComboBox>
-                <ComboBox editable="true" prefHeight="33.0" prefWidth="151.0" promptText="Station" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-                    <GridPane.margin>
-                        <Insets right="-200.0" />
-                    </GridPane.margin>
-                </ComboBox>
-            <Button fx:id="view" mnemonicParsing="false" onAction="#viewChart" text="View" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <Button fx:id="viewButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="View" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="100.0" />
+               </GridPane.margin></Button>
+            <ChoiceBox fx:id="choiceBoxStation" prefHeight="30.0" prefWidth="127.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="-100.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <ChoiceBox fx:id="choiceBoxYear" layoutX="537.0" layoutY="20.0" prefHeight="30.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets right="-300.0" />
+               </GridPane.margin>
+            </ChoiceBox>
             </children>
         </GridPane>
         <AnchorPane fx:id="mainPane" layoutX="70.0" layoutY="180.0" opacity="0.32" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

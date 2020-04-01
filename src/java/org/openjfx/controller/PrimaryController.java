@@ -13,7 +13,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.openjfx.Factory;
 import org.openjfx.controller.abstractions.AController;
 import org.openjfx.model.Weather;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PrimaryController extends AController
@@ -21,7 +26,6 @@ public class PrimaryController extends AController
 
     @FXML private TextField filterField;
     @FXML private TableView<Weather> tableView;
-
     @FXML private TableColumn<Weather, String> station;
     @FXML private TableColumn<Weather, String> month;
     @FXML private TableColumn<Weather, String> tmax;
@@ -30,50 +34,58 @@ public class PrimaryController extends AController
     @FXML private TableColumn<Weather, String> rain;
 
 
-
-
-    private final ObservableList<Weather> observableList = FXCollections.observableArrayList();
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
 
         Factory.sideMenuController().sideMenuInitialization(mainPane, sidePane, menuButton);
-
+        ObservableList<Weather> observableList = FXCollections.observableArrayList();
 
         //Setup Table
         setCellValues();
 
         // Add values to obsList
-        Weather w1 = new Weather("Cardiff",2019, 1, 2.99, 3.44,10,6.99 );
-        Weather w2 = new Weather("Cardiff",2019, 1, 2.99, 3.44,10,6.99 );
-        Weather w3 = new Weather("noWhere",2019, 1, 2.99, 3.44,10,6.99 );
-        Weather w4 = new Weather("somewhere",2019, 1, 2.99, 3.44,10,6.99 );
+        try
+        {
+            addToObsList(observableList);
+        } catch (IOException | URISyntaxException e)
+        {
+            e.printStackTrace();
+        }
 
-        observableList.addAll(w1,w2, w3, w4);
 
-        // Init, sort and  bind filteredList, then add it to table
         FilteredList<Weather> filteredList = new FilteredList<>(observableList, b -> true);
+        initfilerField(filteredList);
 
-        // Filter changes using filterField
-        filterChanges(filteredList);
 
-        // Sort filteredList.
-        SortedList<Weather> sortedList = new SortedList<>(filteredList);
 
         // Bind the SortedList comparator to the TableView comparator
+        SortedList<Weather> sortedList = new SortedList<>(filteredList);
         sortedList.comparatorProperty().bind(tableView.comparatorProperty());
 
-        // Add sortedList to Table
+
         tableView.setItems(sortedList);
 
 
     }
 
-    private void setCellValues()
+    ///////////////////////////////////Business Logic//////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void addToObsList(ObservableList<Weather> observableList) throws IOException, URISyntaxException
     {
 
+        List<Weather> weathers = new ArrayList<Weather>(Factory.fileServices().readFiles(getResourcesPath("org/openjfx/__MACOSX")));
+
+        for(int i = 0; i < weathers.size(); i++)
+        {
+            if(weathers.get(i).getYear() == 2019)
+            {
+                observableList.add(weathers.get(i));
+            }
+        }
+    }
+
+    private void setCellValues()
+    {
         station.setCellValueFactory(new PropertyValueFactory<Weather, String>("station"));
         month.setCellValueFactory(new PropertyValueFactory<Weather, String>("month"));
         tmax.setCellValueFactory(new PropertyValueFactory<Weather, String>("tmax"));
@@ -82,23 +94,21 @@ public class PrimaryController extends AController
         rain.setCellValueFactory(new PropertyValueFactory<Weather, String>("rain"));
     }
 
-    private void filterChanges (FilteredList<Weather> filteredList)
+    private void initfilerField (FilteredList<Weather> filteredList)
     {
         filterField.textProperty().addListener((observable, oldValue, newValue) -> {
 
             filteredList.setPredicate(weather -> {
 
-                if (newValue == null || newValue.isEmpty()) {
+                if (newValue == null || newValue.isEmpty())
                     return true;
-                }
 
                 String lowerCase = newValue.toLowerCase();
 
-                if (weather.getStation().toLowerCase().indexOf(lowerCase) != -1 ) {
+                if (weather.getStation().toLowerCase().indexOf(lowerCase) != -1 )
                     return true;
-                } else {
+                else
                     return false;
-                }
             });
         });
     }

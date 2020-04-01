@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/java/org/openjfx/controller/StatisticController.java" line="98" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="be78dd24-6260-42ea-a1e6-4bba94d63426" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/Aberporth.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/Factory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/controller/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/controller/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/controller/ReportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/controller/StatisticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/controller/StatisticController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/AController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/AController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/model/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/repository/IFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/repository/IFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/repository/IFxml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/repository/IFxml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/services/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/services/CsvFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/org/openjfx/services/Fxml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/org/openjfx/services/Fxml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/org/openjfx/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/org/openjfx/primary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/org/openjfx/report.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/org/openjfx/report.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/org/openjfx/statistic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/org/openjfx/statistic.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/Factory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/controller/PrimaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/controller/PrimaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/controller/ReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/controller/ReportController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/controller/StatisticController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/controller/StatisticController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/report.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/report.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/controller/abstractions/AController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/controller/abstractions/AController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/model/Weather.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/model/Weather.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/repository/IFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/repository/IFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/services/Files.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/openjfx/statistic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjfx/statistic.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/PrimaryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="862">
-              <caret line="81" column="84" selection-start-line="81" selection-start-column="84" selection-end-line="81" selection-end-column="84" />
+            <state relative-caret-position="452">
+              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,55 +75,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/Files.java">
+        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/CsvFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#382#390#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/primary.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="36" column="172" selection-start-line="36" selection-start-column="172" selection-end-line="36" selection-end-column="172" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/SideMenuScene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="13" column="49" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/report.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/ReportController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="126">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,16 +89,57 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/StatisticController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="73" column="11" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#406#422#0" expanded="true" />
-                <element signature="e#486#502#0" expanded="true" />
-                <element signature="e#572#588#0" expanded="true" />
-                <element signature="e#1147#1163#0" expanded="true" />
-                <element signature="e#1230#1246#0" expanded="true" />
-                <element signature="e#1313#1329#0" expanded="true" />
+                <element signature="e#1063#1079#0" expanded="true" />
+                <element signature="e#1112#1128#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/IFxml.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/IFiles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/ReportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/AController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="295">
+              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,21 +157,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/statistic.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24">
-              <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+            <state relative-caret-position="152">
+              <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/module-info.java">
+        <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/Fxml.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="234">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,6 +198,15 @@
       <find>ona</find>
       <find>area</find>
       <find>onac</find>
+      <find>Month</find>
+      <find>choic</find>
+      <find>BUTTON</find>
+      <find>chart</find>
+      <find>tab</find>
+      <find>line</find>
+      <find>list</find>
+      <find>readFiles</find>
+      <find>observableList</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,9 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/controllerInterfaces/IPrimaryController.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/controllerAbstraction/IPrimaryController.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/controllerAbstraction/IController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controllerAbstraction/AbstractController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/AController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/Icontrollers/IController.java" />
@@ -208,37 +232,40 @@
         <option value="$PROJECT_DIR$/src/java/org/openjfx/services/file.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/services/dataManipulation.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/services/fxml.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/services/Fxml.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/repository/IFxml.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IPrimaryController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IStatisticController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/Controller.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/Factory.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/ISideMenuController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/SideMenuController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/SideMenuScene.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/services/DataManipulation.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/repository/IFiles.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/repository/ISideMenuScene.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/services/SideMenuScene.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/AController.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IController.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/services/Files.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/App.java" />
-        <option value="$PROJECT_DIR$/src/java/module-info.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/model/Employee.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/model/Weather.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/ReportController.java" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/PrimaryController.java" />
         <option value="$PROJECT_DIR$/src/resources/org/openjfx/primary.fxml" />
         <option value="$PROJECT_DIR$/src/resources/org/openjfx/report.fxml" />
-        <option value="$PROJECT_DIR$/src/resources/org/openjfx/statistic.fxml" />
-        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/StatisticController.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/hover.java" />
         <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/HoveredThresholdNode.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/services/Files.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/services/csvFiles.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/Factory.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/repository/ISideMenuScene.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/java/module-info.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/model/Weather2.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/model/Weather.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/services/CsvFile.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IController.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/PrimaryController.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/StatisticController.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/repository/IFiles.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/AController.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/services/Fxml.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/repository/IFxml.java" />
+        <option value="$PROJECT_DIR$/src/java/org/openjfx/App.java" />
+        <option value="$PROJECT_DIR$/src/resources/org/openjfx/statistic.fxml" />
       </list>
     </option>
   </component>
@@ -271,10 +298,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="347" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="993" />
     <option name="y" value="32" />
-    <option name="width" value="1573" />
+    <option name="width" value="927" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -283,7 +310,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,6 +349,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="openjfx" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="abstractions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weatherFX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weatherFX" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="openjfx" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weatherFX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weatherFX" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="openjfx" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,13 +391,14 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/java/org/openjfx/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -363,7 +407,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -378,16 +423,18 @@
       <recent name="org.openjfx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/resources/org/openjfx" />
+      <recent name="$PROJECT_DIR$/src/resources" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/resources/org/openjfx" />
       <recent name="$PROJECT_DIR$/src/main/resources/img" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/resources" />
       <recent name="$PROJECT_DIR$/src/java/org/openjfx/model" />
       <recent name="$PROJECT_DIR$/src/java/org/openjfx" />
       <recent name="$PROJECT_DIR$/src/resources/org/openjfx" />
       <recent name="$PROJECT_DIR$/src/main/resources/org/openjfx/img" />
-      <recent name="$PROJECT_DIR$/src/main/resources/org/openjfx" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -471,18 +518,20 @@
       <workItem from="1585490835188" duration="5956000" />
       <workItem from="1585505564539" duration="12161000" />
       <workItem from="1585526180588" duration="4423000" />
-      <workItem from="1585567080844" duration="21113000" />
+      <workItem from="1585567080844" duration="25782000" />
+      <workItem from="1585669806793" duration="25546000" />
+      <workItem from="1585732758778" duration="12710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72491000" />
+    <option name="totallyTimeSpent" value="115416000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="347" y="32" width="1573" height="1048" extended-state="4" />
+    <frame x="67" y="32" width="1853" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19050758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2003339" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -491,7 +540,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26362625" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34371525" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39822024" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -534,154 +583,8 @@
     <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/macosx/._Hurn.csv" />
     <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/services/macosx/._Armagh.csv" />
     <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/IFiles.java" />
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IStatisticController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IStatisticController.java" />
     <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/DataManipulation.java" />
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/IFxml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/IFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/ISideMenuScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/Fxml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/model/Weather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="18" />
-          <folding>
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1009#1010#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
-            <element signature="e#1238#1239#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1486#1487#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/model/Weather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-            <element signature="e#2098#2099#0" expanded="true" />
-            <element signature="e#2128#2129#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2276#2277#0" expanded="true" />
-            <element signature="e#2304#2305#0" expanded="true" />
-            <element signature="e#2337#2338#0" expanded="true" />
-            <element signature="e#2388#2389#0" expanded="true" />
-            <element signature="e#2415#2416#0" expanded="true" />
-            <element signature="e#2452#2453#0" expanded="true" />
-            <element signature="e#2487#2488#0" expanded="true" />
-            <element signature="e#2516#2517#0" expanded="true" />
-            <element signature="e#2550#2551#0" expanded="true" />
-            <element signature="e#2602#2603#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="e#2669#2670#0" expanded="true" />
-            <element signature="e#2706#2707#0" expanded="true" />
-            <element signature="e#2737#2738#0" expanded="true" />
-            <element signature="e#2770#2771#0" expanded="true" />
-            <element signature="e#2820#2821#0" expanded="true" />
-            <element signature="e#2847#2848#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2953#2954#0" expanded="true" />
-            <element signature="e#2986#2987#0" expanded="true" />
-            <element signature="e#3036#3037#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
-            <element signature="e#3103#3104#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#3244#3245#0" expanded="true" />
-            <element signature="e#3269#3270#0" expanded="true" />
-            <element signature="e#3302#3303#0" expanded="true" />
-            <element signature="e#3333#3334#0" expanded="true" />
-            <element signature="e#3364#3365#0" expanded="true" />
-            <element signature="e#3397#3398#0" expanded="true" />
-            <element signature="e#3447#3448#0" expanded="true" />
-            <element signature="e#3474#3475#0" expanded="true" />
-            <element signature="e#3514#3515#0" expanded="true" />
-            <element signature="e#3549#3550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/TableScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -696,99 +599,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IPrimaryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/Files.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#382#390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/ReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IPrimaryController.java" />
     <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/report.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/HoveredThresholdNode.java" />
     <entry file="file://$PROJECT_DIR$/src/java/module-info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="72">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/statistic.fxml">
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/model/Weather2.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+        <state relative-caret-position="432">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/primary.fxml">
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/SideMenuScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="36" column="172" selection-start-line="36" selection-start-column="172" selection-end-line="36" selection-end-column="172" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/AController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="126">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/HoveredThresholdNode.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/primary.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        <state relative-caret-position="180">
+          <caret line="10" column="258" selection-start-line="10" selection-start-column="258" selection-end-line="10" selection-end-column="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/model/Weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/Aberporth.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/ISideMenuScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/IController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/IFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -797,37 +691,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/StatisticController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="73" column="11" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#406#422#0" expanded="true" />
-            <element signature="e#486#502#0" expanded="true" />
-            <element signature="e#572#588#0" expanded="true" />
-            <element signature="e#1147#1163#0" expanded="true" />
-            <element signature="e#1230#1246#0" expanded="true" />
-            <element signature="e#1313#1329#0" expanded="true" />
+            <element signature="e#1063#1079#0" expanded="true" />
+            <element signature="e#1112#1128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/Fxml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/repository/IFxml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/CsvFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/abstractions/AController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/PrimaryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="81" column="84" selection-start-line="81" selection-start-column="84" selection-end-line="81" selection-end-column="84" />
+        <state relative-caret-position="452">
+          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/services/SideMenuScene.java">
+    <entry file="file://$PROJECT_DIR$/src/java/org/openjfx/controller/ReportController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="49" />
+        <state relative-caret-position="144">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/org/openjfx/statistic.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
         </state>
       </provider>
     </entry>

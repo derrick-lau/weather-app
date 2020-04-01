@@ -1,133 +1,91 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.openjfx.model;
 
-import javafx.beans.property.IntegerPropertyBase;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
+import com.opencsv.bean.CsvBindByPosition;
 
-/**
- *
- * @author Cool IT help
- */
 public class Weather {
-
-    private SimpleStringProperty station;
-    private SimpleIntegerProperty year;
-    private SimpleIntegerProperty month;
-    private SimpleDoubleProperty tmax;
-    private SimpleDoubleProperty tmin;
-    private SimpleIntegerProperty af;
-    private SimpleDoubleProperty rain;
-
+    private int stationId;
+    private String station;
+    private Integer year;
+    private Integer month;
+    private Double tmax;
+    private Double tmin;
+    private Integer af;
+    private Double rain;
 
     public Weather(String station, Integer year, Integer month, Double tmax, Double tmin, Integer af, Double rain) {
-
-        this.station = new SimpleStringProperty(station);
-        this.year = new SimpleIntegerProperty(year);
-        this.month = new SimpleIntegerProperty(month);
-        this.tmax = new SimpleDoubleProperty(tmax);
-        this.tmin = new SimpleDoubleProperty(tmin);
-        this.af = new SimpleIntegerProperty(af);
-        this.rain = new SimpleDoubleProperty(rain);
+        this.station = station;
+        this.year = year;
+        this.month = month;
+        this.tmax = tmax;
+        this.tmin = tmin;
+        this.af = af;
+        this.rain = rain;
     }
 
     public Weather() {
     }
 
-    public String getStation() {
-        return station.get();
+    public int getStationId() {
+        return stationId;
     }
 
-    public SimpleStringProperty stationProperty() {
+    public void setStationId(int stationId) {
+        this.stationId = stationId;
+    }
+
+    public String getStation() {
         return station;
     }
 
     public void setStation(String station) {
-        this.station.set(station);
+        this.station = station;
     }
 
-    public int getYear() {
-        return year.get();
-    }
-
-    public SimpleIntegerProperty yearProperty() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(int year) {
-        this.year.set(year);
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
-    public int getMonth() {
-        return month.get();
-    }
-
-    public SimpleIntegerProperty monthProperty() {
+    public Integer getMonth() {
         return month;
     }
 
-    public void setMonth(int month) {
-        this.month.set(month);
+    public void setMonth(Integer month) {
+        this.month = month;
     }
 
-    public double getTmax() {
-        return tmax.get();
-    }
-
-    public SimpleDoubleProperty tmaxProperty() {
+    public Double getTmax() {
         return tmax;
     }
 
-    public void setTmax(double tmax) {
-        this.tmax.set(tmax);
+    public void setTmax(Double tmax) {
+        this.tmax = tmax;
     }
 
-    public double getTmin() {
-        return tmin.get();
-    }
-
-    public SimpleDoubleProperty tminProperty() {
+    public Double getTmin() {
         return tmin;
     }
 
-    public void setTmin(double tmin) {
-        this.tmin.set(tmin);
+    public void setTmin(Double tmin) {
+        this.tmin = tmin;
     }
 
-    public int getAf() {
-        return af.get();
-    }
-
-    public SimpleIntegerProperty afProperty() {
+    public Integer getAf() {
         return af;
     }
 
-    public void setAf(int af) {
-        this.af.set(af);
+    public void setAf(Integer af) {
+        this.af = af;
     }
 
-    public double getRain() {
-        return rain.get();
-    }
-
-    public SimpleDoubleProperty rainProperty() {
+    public Double getRain() {
         return rain;
     }
 
-    public void setRain(double rain) {
-        this.rain.set(rain);
-    }
-
-    @Override
-    public String toString() {
-        return "Weather{" +
-                "month=" + month +
-                '}';
+    public void setRain(Double rain) {
+        this.rain = rain;
     }
 }
-    
