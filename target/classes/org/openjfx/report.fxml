@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -9,25 +11,34 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.ReportController">
 
     <children>
-      <BorderPane layoutY="59.0" prefHeight="639.0" prefWidth="1000.0">
-         <top>
-            <Label prefHeight="85.0" prefWidth="1009.0" text="                                                    Get a Report" BorderPane.alignment="CENTER">
+      <GridPane layoutX="6.0" layoutY="59.0" prefHeight="641.0" prefWidth="994.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="644.0" minWidth="10.0" prefWidth="644.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="673.0" minWidth="10.0" prefWidth="350.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="208.0" minHeight="0.0" prefHeight="105.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="529.0" minHeight="10.0" prefHeight="511.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="132.0" text="Download" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" />
+               </GridPane.margin>
+            </Button>
+            <TextArea editable="false" prefHeight="508.0" prefWidth="634.0" text="Click download and get a report of the following information for each station:&#10;&#10;&#10;&#10;Number: &lt;sequence number&gt;&#10;&#10;Station: &lt;station name&gt;&#10;&#10;Highest: &lt;month/year with the highest tmax&gt;&#10;&#10;Lowest: &lt;month/year with the lowest tmin&gt;&#10;&#10;Average annual af: &lt;average days of air frost per year&gt;&#10;&#10;Average annual rainfall: &lt;average annual rainfall&gt;&#10;&#10;&#10;" wrapText="true" GridPane.rowIndex="1">
                <font>
-                  <Font size="24.0" />
+                  <Font size="20.0" />
+               </font>
+            </TextArea>
+            <Label prefHeight="15.0" prefWidth="658.0" text="                                        Get a Report">
+               <font>
+                  <Font size="31.0" />
                </font>
             </Label>
-         </top>
-         <left>
-            <Label prefHeight="382.0" prefWidth="147.0" text="   Select" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-         </left>
-         <bottom>
-            <Label prefHeight="145.0" prefWidth="1006.0" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
+         </children>
+      </GridPane>
         <AnchorPane fx:id="mainPane" opacity="1" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <AnchorPane prefHeight="59.0" prefWidth="340.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <effect>

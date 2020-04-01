@@ -13,8 +13,6 @@ public interface IController extends Initializable
     @Override
     void initialize(URL location, ResourceBundle resources);
 
-    String getResourcesPath(String name) throws URISyntaxException;
-
     @FXML
     void switchToStatistic() throws IOException;
 

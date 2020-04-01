@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
+
 <?import javafx.geometry.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
@@ -18,18 +18,42 @@
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="0.0" prefWidth="0.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="554.0" minHeight="10.0" prefHeight="547.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="205.0" minHeight="0.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="621.0" minHeight="10.0" prefHeight="621.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="205.0" minHeight="0.0" prefHeight="18.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-            <TabPane prefHeight="553.0" prefWidth="992.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TabPane prefHeight="553.0" prefWidth="992.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1">
               <tabs>
-                <Tab fx:id="stackedBarChartTab" text="Stacked Bar Chart">
+                  <Tab fx:id="overviewTab" text="Overview">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                <fx:include source="overview.fxml" />
+                              </children>
+                          </AnchorPane>
+                      </content>
+                  </Tab>
+                <Tab fx:id="stackedBarChartTab" text="Monthly Records">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="983.0">
                            <children>
-                              <StackedBarChart fx:id="stackedBarChart" animated="false" legendSide="RIGHT" prefHeight="528.0" prefWidth="880.0">
+                                  <Label layoutY="-2.0" prefHeight="85.0" prefWidth="992.0" text="                 Monthly Records in                   in" textAlignment="CENTER">
+                                      <font>
+                                          <Font size="26.0" />
+                                      </font>
+                                  </Label>
+                              <ChoiceBox fx:id="choiceBoxStation" layoutX="403.0" layoutY="25.0" prefHeight="30.0" prefWidth="127.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </ChoiceBox>
+                              <ChoiceBox fx:id="choiceBoxYear" layoutX="583.0" layoutY="25.0" prefHeight="30.0" prefWidth="136.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </ChoiceBox>
+                              <Button fx:id="viewButton" layoutX="749.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="View" />
+                              <StackedBarChart fx:id="stackedBarChart" animated="false" layoutX="58.0" layoutY="99.0" legendSide="RIGHT" prefHeight="475.0" prefWidth="877.0">
                                 <xAxis>
                                   <CategoryAxis label="Month" side="BOTTOM" />
                                 </xAxis>
@@ -41,65 +65,8 @@
                         </AnchorPane>
                   </content>
                 </Tab>
-                  <Tab fx:id="areaChartTab" text="Area Chart">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <AreaChart fx:id="areaChart" animated="false" layoutX="1.0" layoutY="-1.0" legendSide="RIGHT" prefHeight="522.0" prefWidth="881.0">
-                                <xAxis>
-                                  <CategoryAxis label="Month" side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis label="Number" side="LEFT" />
-                                </yAxis>
-                              </AreaChart>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </Tab>
-                  <Tab fx:id="scatteredChartTab" text="Scatter Chart">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <ScatterChart fx:id="scatterChart" animated="false" legendSide="RIGHT" prefHeight="522.0" prefWidth="882.0">
-                                <xAxis>
-                                  <CategoryAxis label="Month" side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis label="Number" side="LEFT" />
-                                </yAxis>
-                              </ScatterChart>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </Tab>
               </tabs>
             </TabPane>
-                <Label prefHeight="131.0" prefWidth="1217.0" text="              Monthly Records in                     in" textAlignment="CENTER" GridPane.columnIndex="1">
-                    <font>
-                        <Font size="26.0" />
-                    </font>
-                </Label>
-            <Button fx:id="viewButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="View" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-               <GridPane.margin>
-                  <Insets right="100.0" />
-               </GridPane.margin></Button>
-            <ChoiceBox fx:id="choiceBoxStation" prefHeight="30.0" prefWidth="127.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <GridPane.margin>
-                  <Insets left="-100.0" />
-               </GridPane.margin>
-            </ChoiceBox>
-            <ChoiceBox fx:id="choiceBoxYear" layoutX="537.0" layoutY="20.0" prefHeight="30.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <GridPane.margin>
-                  <Insets right="-300.0" />
-               </GridPane.margin>
-            </ChoiceBox>
             </children>
         </GridPane>
         <AnchorPane fx:id="mainPane" layoutX="70.0" layoutY="180.0" opacity="0.32" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

@@ -21,14 +21,9 @@ public class StatisticController extends AController
 {
 
     @FXML private StackedBarChart<String, Number> stackedBarChart;
-    @FXML private AreaChart<String, Number> areaChart;
-    @FXML private ScatterChart<String, Number> scatterChart;
     @FXML private ChoiceBox<String> choiceBoxStation;
     @FXML private ChoiceBox<String> choiceBoxYear;
     @FXML private Button viewButton;
-    @FXML private Tab stackedBarChartTab;
-    @FXML private Tab scatteredChartTab;
-    @FXML private Tab areaChartTab;
 
     private XYChart.Series<String, Number> tmax = new XYChart.Series<String, Number>();
     private XYChart.Series<String, Number> tmin = new XYChart.Series<String, Number>();
@@ -43,7 +38,7 @@ public class StatisticController extends AController
         //init choiceBox
         try
         {
-            initChoiceBox(getResourcesPath("org/openjfx/__MACOSX"),  "Aberporth", "2019");
+            initChoiceBox(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX"),  "Aberporth", "2019");
         } catch (URISyntaxException | IOException e)
         {
             e.printStackTrace();
@@ -52,48 +47,23 @@ public class StatisticController extends AController
         //init
         initViewButton();
         initChartLegends();
-        initTabs();
     }
 
     //viewButton #onAction
     private void viewChoices(ChoiceBox<String> choiceBoxStation, ChoiceBox<String> choiceBoxYear) throws IOException, URISyntaxException
     {
-        String folder = getResourcesPath("org/openjfx/__MACOSX");
+        String folder = Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX");
         String chosenStation = choiceBoxStation.getValue().toLowerCase();
         String chosenYear = choiceBoxYear.getValue();
         addChosenDataToSeries(folder, chosenStation, chosenYear);
-        addSeriesToXYChartBySelectTab();
+        addSeriesToXYChart(stackedBarChart);
     }
 
 
     /////////////////////////Business Logic///////////////////////////////////////////////////////////////////////////////////
 
-    private void initTabs ()
-    {
-        handleTabsChange(stackedBarChartTab, stackedBarChart);
-        handleTabsChange(areaChartTab, areaChart);
-        handleTabsChange(scatteredChartTab, scatterChart);
-    }
 
-    private void handleTabsChange (Tab tab, XYChart chart)
-    {
-        tab.setOnSelectionChanged(e -> {
-            if (tab.isSelected()) {
-                addSeriesToXYChart(chart);
-            }
-        });
-    }
 
-    private void addSeriesToXYChartBySelectTab()
-    {
-        if (areaChartTab.isSelected()) {
-            addSeriesToXYChart(areaChart);
-        } else if (scatteredChartTab.isSelected()) {
-            addSeriesToXYChart(scatterChart);
-        } else {
-            addSeriesToXYChart(stackedBarChart);
-        }
-    }
 
     private void initViewButton()
     {
@@ -113,7 +83,7 @@ public class StatisticController extends AController
         tmax.setName("Mean Maximum Temperature");
         tmin.setName("Mean Minimum Temperature");
         af.setName("Days of Air Frosts");
-        rain.setName("Total Rainfall");
+        rain.setName("Total Rainfall(Ten)");
     }
 
     private void initChoiceBox(String dataFolder, String defaultStation, String defaultYear) throws IOException

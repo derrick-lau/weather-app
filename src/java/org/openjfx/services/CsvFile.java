@@ -7,6 +7,9 @@ import org.openjfx.model.Weather;
 import org.openjfx.repository.IFiles;
 
 import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -17,7 +20,7 @@ public class CsvFile implements IFiles
 
 
     @Override
-    public List<Weather> readFiles (String folderPath) throws IOException
+    public List<List<Weather>> readFiles (String folderPath) throws IOException
     {
         File[] csvs = getFiles(folderPath);
         List<List<Weather>> weatherLists = new ArrayList<>();
@@ -29,7 +32,13 @@ public class CsvFile implements IFiles
         }
 
         //Flat nested list and return it
-        return weatherLists.stream().flatMap(List::stream).collect(Collectors.toList());
+        return weatherLists;
+    }
+
+    @Override
+    public String getResourcesPath(String name) throws URISyntaxException {
+        URL resource = getClass().getClassLoader().getResource(name);
+        return String.valueOf(Paths.get(resource.toURI()).toFile());
     }
 
     @Override

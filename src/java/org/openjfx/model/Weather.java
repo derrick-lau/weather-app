@@ -1,9 +1,7 @@
 package org.openjfx.model;
 
-import com.opencsv.bean.CsvBindByPosition;
-
 public class Weather {
-    private int stationId;
+    private Integer stationId;
     private String station;
     private Integer year;
     private Integer month;
@@ -11,18 +9,19 @@ public class Weather {
     private Double tmin;
     private Integer af;
     private Double rain;
-
-    public Weather(String station, Integer year, Integer month, Double tmax, Double tmin, Integer af, Double rain) {
-        this.station = station;
-        this.year = year;
-        this.month = month;
-        this.tmax = tmax;
-        this.tmin = tmin;
-        this.af = af;
-        this.rain = rain;
-    }
+    private HighestTmax highestTmax;
+    private LowestTmin lowestTmin;
 
     public Weather() {
+    }
+
+    public Weather(Integer stationId, String station, Integer af, Double rain, HighestTmax highestTmax, LowestTmin lowestTmin) {
+        this.stationId = stationId;
+        this.station = station;
+        this.af = af;
+        this.rain = rain;
+        this.highestTmax = highestTmax;
+        this.lowestTmin = lowestTmin;
     }
 
     public int getStationId() {

@@ -36,9 +36,4 @@ abstract public class AController implements IController
         App.setScene("report");
     }
 
-    @Override
-    public String getResourcesPath(String name) throws URISyntaxException {
-        URL resource = getClass().getClassLoader().getResource(name);
-        return String.valueOf(Paths.get(resource.toURI()).toFile());
-    }
 }
