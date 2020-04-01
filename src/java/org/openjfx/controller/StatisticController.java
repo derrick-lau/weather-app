@@ -43,9 +43,7 @@ public class StatisticController extends AController
         //init choiceBox
         try
         {
-            String defaultStation = "Aberporth";
-            String defaultYear = "2019";
-            initChoiceBox(getResourcesPath("org/openjfx/__MACOSX"),  defaultStation, defaultYear);
+            initChoiceBox(getResourcesPath("org/openjfx/__MACOSX"),  "Aberporth", "2019");
         } catch (URISyntaxException | IOException e)
         {
             e.printStackTrace();
