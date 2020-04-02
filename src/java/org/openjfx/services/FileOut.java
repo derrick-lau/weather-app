@@ -3,21 +3,28 @@ package org.openjfx.services;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+import java.util.List;
+
+import org.openjfx.repository.IFileOut;
 
 
-public class FileOut {
+public class FileOut implements IFileOut {
 
-
+    @Override
+    public void writeTextsToFile(String title, List<String> contents, File file)
+    {
+        try {
+            PrintWriter writer;
+            writer = new PrintWriter(file);
+            writer.println(title);
+            for(String content: contents )
+            {
+                writer.println(content);
+            }
+            writer.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
 }
