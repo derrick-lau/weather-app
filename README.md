@@ -14,7 +14,7 @@
 ## An overview of program design and implementation.
 
 This project used MVC structure with FXML. 
-Most of of business logic is in service classes and provided by Factor class in order to loose coupling, keep the code DRY, and improve maintainability. 
+Most of of business logic is in service classes and provided by Factory class in order to loose coupling, keep the code DRY, and improve maintainability. 
 
 
 
@@ -47,6 +47,25 @@ openjfx/
 ├── Factory
 ```
 
+```
+public class Factory
+{
+
+    public static IFxml fxmlServices () {
+        return new Fxml();
+    }
+
+    public static IReadFiles fileServices () {
+        return new ReadCsv();
+    }
+
+    public static ISideMenuScene sideMenuController () { return new SideMenuScene();}
+
+    public static IFileOut fileOut () { return new FileOut();}
+
+    public static IWeatherMath weatherMath () { return new WeatherMath(); }
+}
+```
 
 
 
@@ -157,26 +176,6 @@ public class ReportController extends BaseMenuController
     }
 } 
 
-public class FileOut implements IFileOut {
-
-    @Override
-    public void writeTextsToFile(String title, List<String> contents, File file)
-    {
-        try {
-            PrintWriter writer;
-            writer = new PrintWriter(file);
-            writer.println(title);
-            for(String content: contents )
-            {
-                writer.println(content);
-            }
-            writer.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-}
 ```
 
 
