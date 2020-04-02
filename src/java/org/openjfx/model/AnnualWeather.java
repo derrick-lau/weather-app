@@ -74,11 +74,11 @@ public class AnnualWeather
     public String toString() {
         return "==========================\n\n" +
                 "Number:" + stationId +'\n' +
-                "Station:'" + station + '\n' +
+                "Station:" + station + '\n' +
                 "Highest Temperature:" + highestTmax.toString() + '\n' +
                 "Lowest Temperature:" + lowestTmin.toString() + '\n' +
-                "average Annual Af:" + avgAf + '\n' +
-                "Average Annual Rainfall:" + avgRainfall + "\n\n" +
+                "average Annual Af:" + "  " + avgAf + '\n' +
+                "Average Annual Rainfall:" + "  " + avgRainfall + "\n\n" +
                 "=========================\n\n\n\n";
     }
 }
