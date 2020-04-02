@@ -14,7 +14,7 @@
 ## An overview of program design and implementation.
 
 This project used MVC structure with FXML. 
-Most of of business logic is in service classes and provided by Factory class in order to loose coupling, keep the code DRY, and improve maintainability. 
+Most of of business logic is in the service package and provided by Factory class in order to loose coupling, keep the code DRY, and improve maintainability. 
 
 
 
@@ -78,9 +78,6 @@ Then, the application presents the CSV data in a table on a grid pane with a sea
 Search fields allow users to search accurate data conveniently and they work well with tables.
 
 Implementation:
-
-The implementations for filtering and setting table initialized in Overview Controller.
-
 ```
 public class OverviewCotroller implements Initializable
 {
@@ -112,9 +109,9 @@ public class OverviewCotroller implements Initializable
 
 
 
-Next, the application allows users to view monthly data of weather by selecting year and station in a separated tab, which are implemented with two choiceBox and one button for view in 'StatisticController'
-When 'viewChoices' onAction method is called, it will get a list of data using ReadCsv service based on the value of 2 choiceBox, and set the value on the chart.
-The data is presented in a stacked Bar chart. Compared to other types of chart like line chart or area chart, bar charts which avoid overlapping the data are clearer.
+Next, the application allows users to view monthly data of weather by selecting year and station in a separated tab, which are implemented with two choiceBox and one button in 'StatisticController'.
+When 'viewChoices' onAction method is called, it will get a list of data using ReadCsv service based on the value of 2 choiceBox, and set the value of the chart.
+The data will be presented in a stacked Bar chart. Compared to other types of chart like line chart or area chart, bar charts which avoid overlapping the data are clearer.
 
 Implementation:
 ```
@@ -145,8 +142,8 @@ public class StatisticController extends BaseMenuController
 
 The application also allows users to generate a report containing a summary of annual data for each station:
 To generate the annual data, a 'annualWeather' model is needed. 'ReportController' handles onAction 'save'.
-When 'save' method is called, it will first get a nested list of all rows in the csv files, then it calculates those data to get a list of annual data using 'WeatherMath' service.
-Lastly, it show a save dialog and get the desired directory and write the data on a text file using 'fileOut' service. 
+When 'save' method is called, it will first get a nested list of all rows in the csv files, and then it calculates those data to get a list of annual data using 'WeatherMath' service.
+Lastly, it shows a save dialog and get a desired directory and write the data on a text file using 'fileOut' service. 
  
 Implementation:
 
@@ -193,15 +190,15 @@ In every views, users can utilize a side menu to change views. (Beyond the basic
 <br />
 <img src="https://i.imgur.com/L2wLzx2.png" alt="Image of side menu" width="450"/>
   
-In 'Statistic' view, users can select 'overview' tab and get a list weather data in 2019 on a table. Users can search the data by station (Beyond the basic requirements).
+In 'Statistic' view, users can select 'overview' tab and get a list weather data in 2019 on a table. Users can filter the data by station (Beyond the basic requirements).
 <br />
 <img src="https://i.imgur.com/4gMCeDP.png" alt="Image of Overview" width="450"/>
  
-In the same view, users can also select 'Monthly Records'. Then select a 'station' and a 'year' and click 'view'. The chosen data will be presented on the stacked bar chart below the choice boxes.
+In the same view, users can also select 'Monthly Records'. Then select a 'station' and a 'year' and click 'view'. The chosen data will be presented on a stacked bar chart below the choice boxes.
 <br />
 <img src="https://i.imgur.com/gdqCYDQ.png" alt="Image of Monthly Records" width="450"/>
  
-In 'Report' view, users can click 'Generate' button and choose a directory to save the report generated in the format as the description said.
+In 'Report' view, users can click 'Generate' button and choose a directory to save a report generated in the format as the description said.
 <br />
 <img src="https://i.imgur.com/wRIab3m.png" alt="Image of Report" width="450"/>
  
