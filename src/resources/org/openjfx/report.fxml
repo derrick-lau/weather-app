@@ -22,12 +22,12 @@
           <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button onAction="#save" mnemonicParsing="false" prefHeight="66.0" prefWidth="132.0" text="Generate" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#save" prefHeight="66.0" prefWidth="132.0" text="Generate" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="100.0" />
                </GridPane.margin>
             </Button>
-            <TextArea editable="false" prefHeight="508.0" prefWidth="634.0" text="Click 'Generate' Button and save a report(txt) of the following information for each station:&#10;&#10;&#10;&#10;Number: &lt;sequence number&gt;&#10;&#10;Station: &lt;station name&gt;&#10;&#10;Highest: &lt;month/year with the highest tmax&gt;&#10;&#10;Lowest: &lt;month/year with the lowest tmin&gt;&#10;&#10;Average annual af: &lt;average days of air frost per year&gt;&#10;&#10;Average annual rainfall: &lt;average annual rainfall&gt;&#10;&#10;&#10;" wrapText="true" GridPane.rowIndex="1">
+            <TextArea editable="false" prefHeight="508.0" prefWidth="634.0" text="Click 'Generate' Button and save a report(txt) of the following information for each station:&#10;&#10;&#10;     Annual Report&#10;&#10;=================================&#10;Number: &lt;sequence number&gt;&#10;&#10;Station: &lt;station name&gt;&#10;&#10;Highest: &lt;month/year with the highest tmax&gt;&#10;&#10;Lowest: &lt;month/year with the lowest tmin&gt;&#10;&#10;Average annual af: &lt;average days of air frost per year&gt;&#10;&#10;Average annual rainfall: &lt;average annual rainfall&gt;&#10;&#10;==================================&#10;&#10;&#10;" wrapText="true" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>

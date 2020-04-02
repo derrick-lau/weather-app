@@ -1,235 +1,275 @@
-A typeset PDF report (approximately 1000 words/roughly 3-4 pages of text;
-diagrams, screenshots etc. are encouraged) detailing the following:
+
+
+## Setup & Installation
+
+1.Open pom.xml file as a project with Intellij
+
+2.Import existing project
+
+3.please mark resources directory as Resources root
 
 
 
-o An overview of your program design and implementation.
+
+## An overview of program design and implementation.
+
+This project used MVC structure with FXML. 
+Most of of business logic is in service classes and provided by Factor class in order to loose coupling, keep the code DRY, and improve maintainability. 
 
 
-o A basic algorithmic description of the main elements of your solution and how they satisfy the basic requirement listed below. You can use any suitable
-way to describe your solution, for example using pseudocode, UML diagrams,
-text description and/or screen snapshots etc.
-
-
-o A brief user guide describing how major features can be used. 
-You should explicitly highlight any novel features — i.e. those features developed
-beyond the basic requirements. 
-
-# CW2 Server
-
-## Installation
-
-Download and install all requirements for the server with:
 
 ```
-npm install
+openjfx/
+├── controller/
+│   ├── BaseMenuController
+│   ├── OverviewController
+│   ├── PrimaryController
+│   ├── ReportController
+│   └── StatisticController
+├── model/
+│   ├── AnnualWeather
+│   ├── HighestTmax
+│   ├── LowestTmin
+│   └── MonthlyWeather
+├── repository/
+│   ├── IFileOut
+│   ├── IFxml
+│   ├── IReadFiles
+│   ├── ISideMenuMath
+│   └── IWeatherMath
+├── services/   
+│   ├── FileOut
+│   ├── Fxml
+│   ├── ReadFiles
+│   ├── SideMenuMath
+│   └── WeatherMath
+├── App
+├── Factory
 ```
 
-## Initialising a Database
-
-Before you run the server for the first time, you should ensure there is a database available for it to read and write to. You can initialise the database with:
-
-```
-node ./model/initialise_database.js
-```
-
-This will create a `library.sqlite` file inside the `model/` directory and pre-populate it with some sample data.
-
-**CAUTION!** Running this command will remove any data already stored in the database `model/library.sqlite`. It should be used with caution, only when you want to reset the Database to its initial state.
-
-## Running the Server
-
-Start the server with:
-
-```
-node server.js
-```
-
-This will start the server running on port `5000`.
 
 
-## Making requests 
-**CAUTION!**Every requests require a token for authentication.
-
-Requests to the server can be made to the endpoints specified in `server.js`. For details on the Models and the Fields they contain, check `data.js`
 
 
-### `books/...`
 
-**GET /search**
+## A basic algorithmic description of the main elements.
 
-Returns a list of all Books including authors in the database. 
+First of all, the application read the data stored within all CSV files in resources directory using OverviewController which uses 'ReadCsv' service.
+Then, the application presents the CSV data in a table on a grid pane with a search field which can filter the data by station.
+Search fields allow users to search accurate data conveniently and they work well with tables.
 
-Accepted query parameters: `title` and/or `authors` 
+Implementation:
+
+The implementations for filtering and setting table initialized in Overview Controller.
 
 ```
-GET http://127.0.0.1/books/search
-```
-
-**DELETE /delete**
-
-Accepted body fields: `id` and `isbn`
-
-```
-DELETE http://127.0.0.1/books/delete
-```
-
-**POST /**
-
-Creates a new Book. Fields for the Book should be included as the body of the POST request
-
-Accepted fields: `title`, `isbn`, `authors`
-
-```
-POST http://127.0.0.1/books
+public class OverviewCotroller implements Initializable
 {
-    "title": "Building Library Systems",
-    "isbn": "3985789305",
-    "authors": "Joe"
+
+    @FXMLprivate TextField filterField;
+    @FXML private TableView<MonthlyWeather> tableView;
+    @FXML private TableColumn<MonthlyWeather, String> station;
+    @FXML private TableColumn<MonthlyWeather, String> month;
+    @FXML private TableColumn<MonthlyWeather, String> tmax;
+    @FXML private TableColumn<MonthlyWeather, String> tmin;
+    @FXML private TableColumn<MonthlyWeather, String> af;
+    @FXML private TableColumn<MonthlyWeather, String> rain;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+        ObservableList<MonthlyWeather> observableList = FXCollections.observableArrayList();
+
+        //Setup Table
+        setCellValues();
+
+        // Add values to obsList
+        addToObsList(observableList);
+
+        FilteredList<MonthlyWeather> filteredList = new FilteredList<>(observableList, b -> true);
+        initfilerField(filteredList);
+
+        // Bind the SortedList comparator to the TableView comparator
+        SortedList<MonthlyWeather> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(tableView.comparatorProperty());
+
+        tableView.setItems(sortedList);
+
+    }
+
+```
+
+
+
+GET A List of Lists of MonthlyWeather
+
+```
+public class ReadCsv implements IReadFiles
+{
+    ColumnPositionMappingStrategy strategy = new ColumnPositionMappingStrategy();
+
+
+    @Override
+    public List<List<MonthlyWeather>> readFiles (String folderPath)
+    {
+        File[] csvs = getFiles(folderPath);
+        List<List<MonthlyWeather>> weatherLists = new ArrayList<>();
+
+        //Add multiple weather in multiple csvs into a list
+        for(File csv: csvs)
+        {
+            weatherLists.add(readFile(csv.getPath(), getFilteredFileName(csv)));
+        }
+
+        //Flat nested list and return it
+        return weatherLists;
+    }
+}
+```
+
+Add MonthlyWeather to a Observable list
+
+```
+public class OverviewCotroller implements Initializable
+{
+
+    private void addToObsList(ObservableList<MonthlyWeather> observableList)
+    {
+
+        List<List<MonthlyWeather>> weatherLists = new ArrayList<>(Factory.fileServices().readFiles(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX")));
+        List<MonthlyWeather> weathers = weatherLists.stream().flatMap(List::stream).collect(Collectors.toList());
+        for(int i = 0; i < weathers.size(); i++)
+        {
+            if(weathers.get(i).getYear() == 2019)
+            {
+                observableList.add(weathers.get(i));
+            }
+        }
+    }
+}
+
+```
+    
+    
+
+
+
+Next, the application allows users to view monthly data of weather by selecting year and station in a separated tab, which are implemented with two choiceBox and one button for view in 'StatisticController'
+When 'viewChoices' onAction method is called, it will get a list of data using ReadCsv service based on the value of 2 choiceBox, and set the value on the chart.
+The data is presented in a stacked Bar chart. Compared to other types of chart like line chart or area chart, bar charts which avoid overlapping the data are clearer.
+
+Implementation:
+```
+public class StatisticController extends BaseMenuController
+{
+
+    @FXML private StackedBarChart<String, Number> stackedBarChart;
+    @FXML private ChoiceBox<String> choiceBoxStation;
+    @FXML private ChoiceBox<String> choiceBoxYear;
+    @FXML private Button viewButton;
+
+    private XYChart.Series<String, Number> tmax = new XYChart.Series<String, Number>();
+    private XYChart.Series<String, Number> tmin = new XYChart.Series<String, Number>();
+    private XYChart.Series<String, Number> af = new XYChart.Series<String, Number>();
+    private XYChart.Series<String, Number> rain = new XYChart.Series<String, Number>();
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Factory.sideMenuController().sideMenuInitialization(mainPane, sidePane, menuButton);
+
+        initChoiceBox(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX"),  "Aberporth", "2019");
+        initViewButton();
+        initChartLegends();
+    }
+
+    //viewButton #onAction
+    private void viewChoices(ChoiceBox<String> choiceBoxStation, ChoiceBox<String> choiceBoxYear)
+    {
+        String folder = Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX");
+        String chosenStation = choiceBoxStation.getValue().toLowerCase();
+        String chosenYear = choiceBoxYear.getValue();
+        addChosenDataToSeries(folder, chosenStation, chosenYear);
+        addSeriesToXYChart(stackedBarChart);
+    }
+}
+
+``` 
+
+The application also allows users to generate a report containing a summary of annual data for each station:
+To generate the annual data, a 'annualWeather' model is needed. 'ReportController' handles onAction 'save'.
+When 'save' method is called, it will first get a nested list of all rows in the csv files, then it calculates those data to get a list of annual data using 'WeatherMath' service.
+Lastly, it show a save dialog and get the desired directory and write the data on a text file using 'fileOut' service. 
+ 
+Implementation:
+
+```
+public class ReportController extends BaseMenuController
+{
+    @Override
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        Factory.sideMenuController().sideMenuInitialization(mainPane, sidePane, menuButton);
+    }
+
+    //onAction
+    public void save() {
+
+        String title = "          " + "Annual Weather Report\n\n\n\n";
+        List<String> annualWeathers = getWeatherStringList();
+
+        FileChooser fileChooser = new FileChooser();
+        setFileChooserExtension(fileChooser);
+
+        File file = fileChooser.showSaveDialog(new Stage());
+
+        if (file != null) {
+            Factory.fileOut().writeTextsToFile(title, annualWeathers, file);
+        }
+    }
+} 
+
+public class FileOut implements IFileOut {
+
+    @Override
+    public void writeTextsToFile(String title, List<String> contents, File file)
+    {
+        try {
+            PrintWriter writer;
+            writer = new PrintWriter(file);
+            writer.println(title);
+            for(String content: contents )
+            {
+                writer.println(content);
+            }
+            writer.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }
 ```
 
 
-### `users/...`
-
-**GET /search**
-
-Returns a list of all Users in the database
-
-Accepted query parameters: `name` and/or `barcode` 
-```
-GET http://127.0.0.1/users/search
-```
-
-
-**POST /**
-
-Creates a new User. Fields for the new User should be included in the body of the POST request.
-
-Accepted body fields: `name`, `barcode`, `memberType`
-
-```
-POST http://127.0.0.1/users/add
-{
-    "name": "Sarah",
-    "barcode": "39587985",
-    "memberType": "Student"
-}
-```
-
-**PUT /:userID**
-
-Updates the details of the User with the specified `userID`. Fields to be updated should be included in the body of the PUT request
-
-Accepted body fields: `name`, `barcode`, `memberType`
-
-```
-PUT http://127.0.0.1/users/1
-{
-    "name": "Sarah",
-    "barcode": "39587985",
-    "memberType": "Student"
-}
-```
-
-**DELETE /delete**
-
-Deletes the User with  body fields: `id` and `barcode`
-
-```
-DELETE http://127.0.0.1/users/1
-```
 
 
 
 
-### `loans/...`
-
-**GET /user**
-
-Returns the user borrowing a book
-
-Accepted query parameters: `BookID` 
-
-```
-GET http://127.0.0.1/loans/user
-```
-
-**GET /search**
-
-Returns a of all loans of a user
-
-Accepted query parameters: `userID` 
-
-```
-GET http://127.0.0.1/loans/search
-```
-
-**PUT /:loanID**
-
-Updates the details of the Loan with the specified `loanID`. Fields to be updated should be included in the body of the PUT request
-
-Accepted body fields: `dueDate`
-
-```
-GET http://127.0.0.1/loans/1
-{"dueDate": "2018-12-31"}
-```
-
-**DELETE /:loanID**
-
-Deletes the loan with body fields: `id` 
-
-```
-DELETE http://127.0.0.1/loans/delete
-```
-
-**POST /book/:bookID/user/:userID**
-
-Creates or Updates a Loan for the User with the specified `userID` and the Book with the specified `bookID`. Fields to be added to or updated in the Loan should be included in the body of the POST request
-
-Accepted body fields: `dueDate`
-
-```
-POST http://127.0.0.1/users/1/loans/2
-{"dueDate": "2018-12-31"}
-```
-
-
-
-### `signin/...`
-
-**POST /**
-
-Authentication user and return a token
-
-Accepted fields: `barcode`, `password`
-
-```
-POST http://127.0.0.1/signin
-{
-    "barcode": "123456",
-    "password": "123456"
-}
-```
-
-
-### `logs/...`
-
-**GET /search**
-
-Returns a list audit logs in the specified date.
-
-Accepted query parameters: `createAt` 
-
-```
-GET http://127.0.0.1/logs/search
-```
-
-
-
-## Editing the server
-
-The Node server uses the [Sequelize](http://docs.sequelizejs.com/) library for interacting with the SQLite database.
-
-It uses the [Express](https://expressjs.com/) framework for running the web server and routing queries.
+## A brief user guide describing how major features can be used. 
+First, run the application. The first view will be a directory that allows user to select to use either
+'view statistic' or 'get report' services. (Beyond basic requirements)
+ [img]  
+ 
+On every views, users can utilize a side menu to change views. (Beyond basic requirements)
+ [img] 
+  
+On 'Statistic' view, users can select 'overview' tab and get a table of weather data in 2019. Users can search the data by station (Beyond basic requirements).
+ [img] 
+ 
+On the same view, users can also select 'Monthly Records'. Then select a 'station' and a 'year' and click 'view'. The chosen data will be presented on the stacked bar chart below the choice boxes.
+ [img] 
+ 
+On the 'Report' users can click 'Generate' button and choose a directory to save the report generated in the format as the description said.
+ [img]  
