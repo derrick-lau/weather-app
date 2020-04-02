@@ -66,16 +66,6 @@ The implementations for filtering and setting table initialized in Overview Cont
 public class OverviewCotroller implements Initializable
 {
 
-    @FXMLprivate TextField filterField;
-    @FXML private TableView<MonthlyWeather> tableView;
-    @FXML private TableColumn<MonthlyWeather, String> station;
-    @FXML private TableColumn<MonthlyWeather, String> month;
-    @FXML private TableColumn<MonthlyWeather, String> tmax;
-    @FXML private TableColumn<MonthlyWeather, String> tmin;
-    @FXML private TableColumn<MonthlyWeather, String> af;
-    @FXML private TableColumn<MonthlyWeather, String> rain;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -102,58 +92,6 @@ public class OverviewCotroller implements Initializable
 
 
 
-GET A List of Lists of MonthlyWeather
-
-```
-public class ReadCsv implements IReadFiles
-{
-    ColumnPositionMappingStrategy strategy = new ColumnPositionMappingStrategy();
-
-
-    @Override
-    public List<List<MonthlyWeather>> readFiles (String folderPath)
-    {
-        File[] csvs = getFiles(folderPath);
-        List<List<MonthlyWeather>> weatherLists = new ArrayList<>();
-
-        //Add multiple weather in multiple csvs into a list
-        for(File csv: csvs)
-        {
-            weatherLists.add(readFile(csv.getPath(), getFilteredFileName(csv)));
-        }
-
-        //Flat nested list and return it
-        return weatherLists;
-    }
-}
-```
-
-Add MonthlyWeather to a Observable list
-
-```
-public class OverviewCotroller implements Initializable
-{
-
-    private void addToObsList(ObservableList<MonthlyWeather> observableList)
-    {
-
-        List<List<MonthlyWeather>> weatherLists = new ArrayList<>(Factory.fileServices().readFiles(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX")));
-        List<MonthlyWeather> weathers = weatherLists.stream().flatMap(List::stream).collect(Collectors.toList());
-        for(int i = 0; i < weathers.size(); i++)
-        {
-            if(weathers.get(i).getYear() == 2019)
-            {
-                observableList.add(weathers.get(i));
-            }
-        }
-    }
-}
-
-```
-    
-    
-
-
 
 Next, the application allows users to view monthly data of weather by selecting year and station in a separated tab, which are implemented with two choiceBox and one button for view in 'StatisticController'
 When 'viewChoices' onAction method is called, it will get a list of data using ReadCsv service based on the value of 2 choiceBox, and set the value on the chart.
@@ -163,17 +101,6 @@ Implementation:
 ```
 public class StatisticController extends BaseMenuController
 {
-
-    @FXML private StackedBarChart<String, Number> stackedBarChart;
-    @FXML private ChoiceBox<String> choiceBoxStation;
-    @FXML private ChoiceBox<String> choiceBoxYear;
-    @FXML private Button viewButton;
-
-    private XYChart.Series<String, Number> tmax = new XYChart.Series<String, Number>();
-    private XYChart.Series<String, Number> tmin = new XYChart.Series<String, Number>();
-    private XYChart.Series<String, Number> af = new XYChart.Series<String, Number>();
-    private XYChart.Series<String, Number> rain = new XYChart.Series<String, Number>();
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -260,16 +187,22 @@ public class FileOut implements IFileOut {
 ## A brief user guide describing how major features can be used. 
 First, run the application. The first view will be a directory that allows user to select either
 'view statistic' or 'get report' services. (Beyond the basic requirements)
- ![Image of directory](https://i.imgur.com/DFtIW2a.png) 
+<br />
+<img src="https://i.imgur.com/DFtIW2a.png" alt="Image of directory" width="450"/>
  
 In every views, users can utilize a side menu to change views. (Beyond the basic requirements)
- ![Image of side menu](https://i.imgur.com/L2wLzx2.png)
+<br />
+<img src="https://i.imgur.com/L2wLzx2.png" alt="Image of side menu" width="450"/>
   
 In 'Statistic' view, users can select 'overview' tab and get a list weather data in 2019 on a table. Users can search the data by station (Beyond the basic requirements).
- ![Image of Overview](https://i.imgur.com/4gMCeDP.png)
+<br />
+<img src="https://i.imgur.com/4gMCeDP.png" alt="Image of Overview" width="450"/>
  
 In the same view, users can also select 'Monthly Records'. Then select a 'station' and a 'year' and click 'view'. The chosen data will be presented on the stacked bar chart below the choice boxes.
- ![Image of Monthly Records](https://i.imgur.com/gdqCYDQ.png)
+<br />
+<img src="https://i.imgur.com/gdqCYDQ.png" alt="Image of Monthly Records" width="450"/>
  
 In 'Report' view, users can click 'Generate' button and choose a directory to save the report generated in the format as the description said.
- ![Image of Report](https://i.imgur.com/wRIab3m.png) 
+<br />
+<img src="https://i.imgur.com/wRIab3m.png" alt="Image of Report" width="450"/>
+ 
