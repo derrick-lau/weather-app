@@ -1,12 +1,10 @@
 package org.openjfx.repository;
 
-import org.openjfx.model.Weather;
+import org.openjfx.model.MonthlyWeather;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 
 public interface IWeatherMath
 {
-    List<Weather> calculate(List<List<Weather>> weatherLists);
+    List<String> getCalculatedStrings(List<List<MonthlyWeather>> weatherLists);
 }

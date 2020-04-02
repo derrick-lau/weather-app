@@ -22,7 +22,7 @@
           <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="132.0" text="Download" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button onAction="#save" mnemonicParsing="false" prefHeight="66.0" prefWidth="132.0" text="Download" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="100.0" />
                </GridPane.margin>

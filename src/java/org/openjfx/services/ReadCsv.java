@@ -3,27 +3,26 @@ package org.openjfx.services;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import org.openjfx.model.Weather;
-import org.openjfx.repository.IFiles;
+import org.openjfx.model.MonthlyWeather;
+import org.openjfx.repository.IReadFiles;
 
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Collectors;
 
 
-public class CsvFile implements IFiles
+public class ReadCsv implements IReadFiles
 {
     ColumnPositionMappingStrategy strategy = new ColumnPositionMappingStrategy();
 
 
     @Override
-    public List<List<Weather>> readFiles (String folderPath) throws IOException
+    public List<List<MonthlyWeather>> readFiles (String folderPath)
     {
         File[] csvs = getFiles(folderPath);
-        List<List<Weather>> weatherLists = new ArrayList<>();
+        List<List<MonthlyWeather>> weatherLists = new ArrayList<>();
 
         //Add multiple weather in multiple csvs into a list
         for(File csv: csvs)
@@ -36,9 +35,18 @@ public class CsvFile implements IFiles
     }
 
     @Override
-    public String getResourcesPath(String name) throws URISyntaxException {
+    public String getResourcesPath(String name) {
         URL resource = getClass().getClassLoader().getResource(name);
-        return String.valueOf(Paths.get(resource.toURI()).toFile());
+        String resources = "";
+        try
+        {
+            resources = String.valueOf(Paths.get(resource.toURI()).toFile());
+        } catch (URISyntaxException e)
+        {
+            e.printStackTrace();
+        }
+
+        return resources;
     }
 
     @Override
@@ -55,9 +63,9 @@ public class CsvFile implements IFiles
     }
 
     @Override
-    public List<Weather> readFilesByFileName (String path, String name)throws IOException
+    public List<MonthlyWeather> readFilesByFileName (String path, String name)
     {
-        List<Weather> weathers = new ArrayList<>();
+        List<MonthlyWeather> weathers = new ArrayList<>();
 
         File[] files = getFiles(path);
         for (File file: files)
@@ -73,39 +81,72 @@ public class CsvFile implements IFiles
 
 
     @Override
-    public List<Weather> readFile (String csv, String fileName) throws IOException
+    public List<MonthlyWeather> readFile (String csv, String fileName)
     {
         //Setup
-        strategy.setType(Weather.class);
-        String[] columns = new String[] {"year", "month", "tmax", "tmin", "af", "rain"};
-        strategy.setColumnMapping(columns);
-        FileReader fileReader = new FileReader(csv);
-        CsvToBean<Weather> csvToBean = null;
+
+        FileReader fileReader = readFileSetup(csv);
 
         //Map a row to a bean
-        if (fileReader.read() > 0)
-        {
-            csvToBean = new CsvToBeanBuilder<Weather>(fileReader)
-                    .withMappingStrategy(strategy)
-                    .withType(Weather.class)
-                    .withSeparator(',')
-                    .build();
-        } else {
-
-            return new ArrayList<Weather>();
-        }
-
-        //Parse the bean
-        List<Weather> weathers = csvToBean.parse();
+        List<MonthlyWeather> weathers = mapRowToBean(fileReader);
 
         //Add a station name to a weather object
         addFileNameToObj(weathers, fileName);
+
         return weathers;
     }
 
-    private void addFileNameToObj(List<Weather> weathers, String fileName)
+
+
+
+
+    //////////////////////////Business Logic/////////////////////////////////////////////////////////////////////
+
+    private FileReader readFileSetup(String csv)
     {
-        for(Weather weather: weathers)
+        //Setup
+        strategy.setType(MonthlyWeather.class);
+        String[] columns = new String[] {"year", "month", "tmax", "tmin", "af", "rain"};
+        strategy.setColumnMapping(columns);
+        FileReader fileReader = null;
+        try
+        {
+            fileReader = new FileReader(csv);
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        return fileReader;
+    }
+
+    private List<MonthlyWeather> mapRowToBean (FileReader fileReader)
+    {
+        CsvToBean<MonthlyWeather> csvToBean = null;
+        try
+        {
+            if (fileReader.read() > 0)
+            {
+                csvToBean = new CsvToBeanBuilder<MonthlyWeather>(fileReader)
+                        .withMappingStrategy(strategy)
+                        .withType(MonthlyWeather.class)
+                        .withSeparator(',')
+                        .build();
+            } else {
+                return new ArrayList<MonthlyWeather>();
+            }
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        return csvToBean.parse();
+    }
+
+
+    private void addFileNameToObj(List<MonthlyWeather> weathers, String fileName)
+    {
+        for(MonthlyWeather weather: weathers)
         {
             weather.setStation(fileName);
         }

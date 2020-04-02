@@ -1,16 +1,14 @@
-package org.openjfx.controller.abstractions;
+package org.openjfx.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import org.openjfx.App;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
 
-abstract public class AController implements IController
+abstract public class BaseMenuController implements Initializable
 {
     @FXML
     protected AnchorPane mainPane;
@@ -21,17 +19,14 @@ abstract public class AController implements IController
     @FXML
     protected ImageView menuButton;
 
-    @Override
     public void switchToStatistic() throws IOException {
         App.setScene("statistic");
     }
 
-    @Override
     public void switchToPrimary() throws IOException {
         App.setScene("primary");
     }
 
-    @Override
     public void switchToReport() throws IOException {
         App.setScene("report");
     }

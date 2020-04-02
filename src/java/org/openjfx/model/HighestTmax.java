@@ -2,12 +2,13 @@ package org.openjfx.model;
 
 public class HighestTmax
 {
-    private Double HighestTmax;
+    private Long id;
+    private Double highestTmax;
     private Integer year;
     private Integer month;
 
-    public HighestTmax(Double HighestTmax, Integer year, Integer month) {
-        this.HighestTmax = HighestTmax;
+    public HighestTmax(Double highestTmax, Integer year, Integer month) {
+        this.highestTmax = highestTmax;
         this.year = year;
         this.month = month;
     }
@@ -16,11 +17,11 @@ public class HighestTmax
     }
 
     public Double getHighestTmax() {
-        return HighestTmax;
+        return highestTmax;
     }
 
     public void setHighestTmax(Double tmax) {
-        this.HighestTmax = HighestTmax;
+        this.highestTmax = highestTmax;
     }
 
     public Integer getYear() {
@@ -37,5 +38,10 @@ public class HighestTmax
 
     public void setMonth(Integer month) {
         this.month = month;
+    }
+
+    @Override
+    public String toString() {
+        return  "  "+ month + " / " + year + "  " + highestTmax ;
     }
 }

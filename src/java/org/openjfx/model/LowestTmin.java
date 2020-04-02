@@ -2,8 +2,8 @@ package org.openjfx.model;
 
 public class LowestTmin
 {
+    private Long id;
     private Double lowestTmin;
-
     private Integer year;
     private Integer month;
 
@@ -38,5 +38,10 @@ public class LowestTmin
 
     public void setMonth(Integer month) {
         this.month = month;
+    }
+
+    @Override
+    public String toString() {
+        return  "  " + month + " / " + year + "  " + lowestTmin;
     }
 }

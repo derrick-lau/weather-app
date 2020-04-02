@@ -5,19 +5,15 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Tab;
 import org.openjfx.Factory;
-import org.openjfx.controller.abstractions.AController;
-import org.openjfx.model.Weather;
+import org.openjfx.model.MonthlyWeather;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.*;
 
 
-public class StatisticController extends AController
+public class StatisticController extends BaseMenuController
 {
 
     @FXML private StackedBarChart<String, Number> stackedBarChart;
@@ -35,22 +31,13 @@ public class StatisticController extends AController
     public void initialize(URL location, ResourceBundle resources) {
         Factory.sideMenuController().sideMenuInitialization(mainPane, sidePane, menuButton);
 
-        //init choiceBox
-        try
-        {
-            initChoiceBox(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX"),  "Aberporth", "2019");
-        } catch (URISyntaxException | IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        //init
+        initChoiceBox(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX"),  "Aberporth", "2019");
         initViewButton();
         initChartLegends();
     }
 
     //viewButton #onAction
-    private void viewChoices(ChoiceBox<String> choiceBoxStation, ChoiceBox<String> choiceBoxYear) throws IOException, URISyntaxException
+    private void viewChoices(ChoiceBox<String> choiceBoxStation, ChoiceBox<String> choiceBoxYear)
     {
         String folder = Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX");
         String chosenStation = choiceBoxStation.getValue().toLowerCase();
@@ -68,13 +55,7 @@ public class StatisticController extends AController
     private void initViewButton()
     {
         viewButton.setOnAction(e -> {
-            try
-            {
-                viewChoices(choiceBoxStation, choiceBoxYear);
-            } catch (IOException | URISyntaxException ex)
-            {
-                ex.printStackTrace();
-            }
+            viewChoices(choiceBoxStation, choiceBoxYear);
         });
     }
 
@@ -86,7 +67,7 @@ public class StatisticController extends AController
         rain.setName("Total Rainfall(Ten)");
     }
 
-    private void initChoiceBox(String dataFolder, String defaultStation, String defaultYear) throws IOException
+    private void initChoiceBox(String dataFolder, String defaultStation, String defaultYear)
     {
         choiceBoxStation.getItems().addAll(Factory.fileServices().getFilteredFileNames(dataFolder));
         choiceBoxStation.setValue(defaultStation);
@@ -105,13 +86,13 @@ public class StatisticController extends AController
         return years;
     }
 
-    private void addChosenDataToSeries (String dataPath, String chosenStation, String chosenYear) throws IOException
+    private void addChosenDataToSeries (String dataPath, String chosenStation, String chosenYear)
     {
         clearSeries();
-        List<Weather> weatherList = Factory.fileServices().readFilesByFileName(dataPath, chosenStation);
+        List<MonthlyWeather> weatherList = Factory.fileServices().readFilesByFileName(dataPath, chosenStation);
 
         int month = 1;
-        for (Weather weather: weatherList)
+        for (MonthlyWeather weather: weatherList)
         {
             if(weather.getYear().toString().equals(chosenYear))
             {
