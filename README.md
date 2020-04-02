@@ -258,18 +258,18 @@ public class FileOut implements IFileOut {
 
 
 ## A brief user guide describing how major features can be used. 
-First, run the application. The first view will be a directory that allows user to select to use either
-'view statistic' or 'get report' services. (Beyond basic requirements)
- [img]  
+First, run the application. The first view will be a directory that allows user to select either
+'view statistic' or 'get report' services. (Beyond the basic requirements)
+ ![Image of directory](https://i.imgur.com/DFtIW2a.png) 
  
-On every views, users can utilize a side menu to change views. (Beyond basic requirements)
- [img] 
+In every views, users can utilize a side menu to change views. (Beyond the basic requirements)
+ ![Image of side menu](https://i.imgur.com/L2wLzx2.png)
   
-On 'Statistic' view, users can select 'overview' tab and get a table of weather data in 2019. Users can search the data by station (Beyond basic requirements).
- [img] 
+In 'Statistic' view, users can select 'overview' tab and get a list weather data in 2019 on a table. Users can search the data by station (Beyond the basic requirements).
+ ![Image of Overview](https://i.imgur.com/4gMCeDP.png)
  
-On the same view, users can also select 'Monthly Records'. Then select a 'station' and a 'year' and click 'view'. The chosen data will be presented on the stacked bar chart below the choice boxes.
- [img] 
+In the same view, users can also select 'Monthly Records'. Then select a 'station' and a 'year' and click 'view'. The chosen data will be presented on the stacked bar chart below the choice boxes.
+ ![Image of Monthly Records](https://i.imgur.com/gdqCYDQ.png)
  
-On the 'Report' users can click 'Generate' button and choose a directory to save the report generated in the format as the description said.
- [img]  
+In 'Report' view, users can click 'Generate' button and choose a directory to save the report generated in the format as the description said.
+ ![Image of Report](https://i.imgur.com/wRIab3m.png) 
