@@ -3,6 +3,7 @@ package org.openjfx.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import org.openjfx.Factory;
@@ -16,7 +17,7 @@ import java.util.*;
 public class StatisticController extends BaseMenuController
 {
 
-    @FXML private StackedBarChart<String, Number> stackedBarChart;
+    @FXML private LineChart<String, Number> chart1;
     @FXML private ChoiceBox<String> choiceBoxStation;
     @FXML private ChoiceBox<String> choiceBoxYear;
     @FXML private Button viewButton;
@@ -27,11 +28,12 @@ public class StatisticController extends BaseMenuController
     private XYChart.Series<String, Number> rain = new XYChart.Series<String, Number>();
 
 
+    Alert alert = new Alert(Alert.AlertType.NONE);
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Factory.sideMenuController().sideMenuInitialization(mainPane, sidePane, menuButton);
 
-        initChoiceBox(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX"),  "Aberporth", "2019");
+        initChoiceBox(Factory.fileServices().getResourcesPath());
         initViewButton();
         initChartLegends();
     }
@@ -39,11 +41,11 @@ public class StatisticController extends BaseMenuController
     //viewButton #onAction
     private void viewChoices(ChoiceBox<String> choiceBoxStation, ChoiceBox<String> choiceBoxYear)
     {
-        String folder = Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX");
+        String folder = Factory.fileServices().getResourcesPath();
         String chosenStation = choiceBoxStation.getValue().toLowerCase();
         String chosenYear = choiceBoxYear.getValue();
         addChosenDataToSeries(folder, chosenStation, chosenYear);
-        addSeriesToXYChart(stackedBarChart);
+        addSeriesToXYChart(chart1);
     }
 
 
@@ -67,18 +69,18 @@ public class StatisticController extends BaseMenuController
         rain.setName("Total Rainfall(Ten)");
     }
 
-    private void initChoiceBox(String dataFolder, String defaultStation, String defaultYear)
+    private void initChoiceBox(String dataFolder)
     {
         choiceBoxStation.getItems().addAll(Factory.fileServices().getFilteredFileNames(dataFolder));
-        choiceBoxStation.setValue(defaultStation);
+        choiceBoxStation.setValue("Aberporth");
         choiceBoxYear.getItems().addAll(getYearsRange());
-        choiceBoxYear.setValue(defaultYear);
+        choiceBoxYear.setValue("2019");
     }
 
     private List<String> getYearsRange()
     {
         List<String> years = new ArrayList<>();
-        for(int i = 2000; i<= LocalDate.now().getYear(); i++)
+        for(int i = 2010; i<= LocalDate.now().getYear(); i++)
         {
             years.add(Integer.toString(i));
         }
@@ -91,28 +93,38 @@ public class StatisticController extends BaseMenuController
         clearSeries();
         List<MonthlyWeather> weatherList = Factory.fileServices().readFilesByFileName(dataPath, chosenStation);
 
-        int month = 1;
-        for (MonthlyWeather weather: weatherList)
-        {
-            if(weather.getYear().toString().equals(chosenYear))
+
+            int month = 1;
+            for (MonthlyWeather weather : weatherList)
             {
-                tmax.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getTmax()));
-                tmin.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getTmin()));
-                af.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getAf()));
-                rain.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getRain()/10));
-                month ++;
+                if (weather.getYear().toString().equals(chosenYear))
+                {
+                    tmax.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getTmax()));
+                    tmin.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getTmin()));
+                    af.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getAf()));
+                    rain.getData().add(new XYChart.Data<>(Integer.toString(month), weather.getRain() / 10));
+                    month++;
+                }
             }
-        }
+
     }
 
     private void addSeriesToXYChart(XYChart chart)
     {
-
         chart.getData().clear();
-        chart.getData().add(tmin);
-        chart.getData().add(tmax);
-        chart.getData().add(af);
-        chart.getData().add(rain);
+
+        if(!tmin.getData().isEmpty() || !tmin.getData().isEmpty() || !af.getData().isEmpty() || !rain.getData().isEmpty()) {
+            chart.getData().add(tmin);
+            chart.getData().add(tmax);
+            chart.getData().add(af);
+            chart.getData().add(rain);
+
+        } else {
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setContentText("No data found");
+            alert.show();
+        }
+
     }
 
     private void clearSeries()

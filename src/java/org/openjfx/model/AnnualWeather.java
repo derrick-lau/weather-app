@@ -7,16 +7,24 @@ public class AnnualWeather
     private String station;
     private HighestTmax highestTmax;
     private LowestTmin lowestTmin;
+    private Double highestTmaxNumber;
+    private Double lowestTminNumber;
     private Integer avgAf;
     private Double avgRainfall;
+    private Integer totalAf;
+    private Double totalRainfall;
 
-    public AnnualWeather(Integer stationId, String station, HighestTmax highestTmax, LowestTmin lowestTmin, Integer avgAf, Double avgRainfall) {
+    public AnnualWeather(Integer stationId, String station, Double highestTmaxNumber, Double lowestTminNumber, HighestTmax highestTmax, LowestTmin lowestTmin, Integer totalAf, Double totalRainfall, Integer avgAf, Double avgRainfall) {
         this.stationId = stationId;
         this.station = station;
+        this.highestTmaxNumber = highestTmaxNumber;
+        this.lowestTminNumber = lowestTminNumber;
         this.highestTmax = highestTmax;
         this.lowestTmin = lowestTmin;
         this.avgAf = avgAf;
         this.avgRainfall = avgRainfall;
+        this.totalAf = totalAf;
+        this.totalRainfall = totalRainfall;
     }
 
     public AnnualWeather() {
@@ -70,6 +78,39 @@ public class AnnualWeather
         this.avgRainfall = avgRainfall;
     }
 
+    public Integer getTotalAf() {
+        return totalAf;
+    }
+
+    public void setTotalAf(Integer totalAf) {
+        this.totalAf = totalAf;
+    }
+
+    public Double getTotalRainfall() {
+        return totalRainfall;
+    }
+
+    public void setTotalRainfall(Double totalRainfall) {
+        this.totalRainfall = totalRainfall;
+    }
+
+
+    public Double getHighestTmaxNumber() {
+        return highestTmaxNumber;
+    }
+
+    public void setHighestTmaxNumber(Double highestTmaxNumber) {
+        this.highestTmaxNumber = highestTmaxNumber;
+    }
+
+    public Double getLowestTminNumber() {
+        return lowestTminNumber;
+    }
+
+    public void setLowestTminNumber(Double lowestTminNumber) {
+        this.lowestTminNumber = lowestTminNumber;
+    }
+
     @Override
     public String toString() {
         return "==========================\n\n" +
@@ -81,4 +122,5 @@ public class AnnualWeather
                 "Average Annual Rainfall:" + "  " + avgRainfall + "\n\n" +
                 "=========================\n\n\n\n";
     }
+
 }

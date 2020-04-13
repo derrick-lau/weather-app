@@ -35,8 +35,8 @@ public class ReadCsv implements IReadFiles
     }
 
     @Override
-    public String getResourcesPath(String name) {
-        URL resource = getClass().getClassLoader().getResource(name);
+    public String getResourcesPath() {
+        URL resource = getClass().getClassLoader().getResource("org/openjfx/__MACOSX");
         String resources = "";
         try
         {

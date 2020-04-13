@@ -38,7 +38,7 @@ public class ReportController extends BaseMenuController
 
     private List<String> getWeatherStringList ()
     {
-        List<List<MonthlyWeather>> weatherLists = Factory.fileServices().readFiles(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX"));
+        List<List<MonthlyWeather>> weatherLists = Factory.fileServices().readFiles(Factory.fileServices().getResourcesPath());
         List<String> annualWeatherList = Factory.weatherMath().getCalculatedStrings(weatherLists);
         return annualWeatherList;
     }

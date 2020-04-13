@@ -10,6 +10,8 @@ public class MonthlyWeather {
     private Integer af;
     private Double rain;
 
+    public MonthlyWeather() {
+    }
 
 
     public String getStation() {

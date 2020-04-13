@@ -11,32 +11,30 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.openjfx.Factory;
+import org.openjfx.model.AnnualWeather;
 import org.openjfx.model.MonthlyWeather;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 public class OverviewCotroller implements Initializable
 {
 
     @FXML
     private TextField filterField;
-    @FXML private TableView<MonthlyWeather> tableView;
-    @FXML private TableColumn<MonthlyWeather, String> station;
-    @FXML private TableColumn<MonthlyWeather, String> month;
-    @FXML private TableColumn<MonthlyWeather, String> tmax;
-    @FXML private TableColumn<MonthlyWeather, String> tmin;
-    @FXML private TableColumn<MonthlyWeather, String> af;
-    @FXML private TableColumn<MonthlyWeather, String> rain;
+    @FXML private TableView<AnnualWeather> tableView;
+    @FXML private TableColumn<AnnualWeather, String> station;
+    @FXML private TableColumn<AnnualWeather, String> tmax;
+    @FXML private TableColumn<AnnualWeather, String> tmin;
+    @FXML private TableColumn<AnnualWeather, String> af;
+    @FXML private TableColumn<AnnualWeather, String> rain;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        ObservableList<MonthlyWeather> observableList = FXCollections.observableArrayList();
+        ObservableList<AnnualWeather> observableList = FXCollections.observableArrayList();
 
         //Setup Table
         setCellValues();
@@ -44,11 +42,11 @@ public class OverviewCotroller implements Initializable
         // Add values to obsList
         addToObsList(observableList);
 
-        FilteredList<MonthlyWeather> filteredList = new FilteredList<>(observableList, b -> true);
+        FilteredList<AnnualWeather> filteredList = new FilteredList<>(observableList, b -> true);
         initfilerField(filteredList);
 
         // Bind the SortedList comparator to the TableView comparator
-        SortedList<MonthlyWeather> sortedList = new SortedList<>(filteredList);
+        SortedList<AnnualWeather> sortedList = new SortedList<>(filteredList);
         sortedList.comparatorProperty().bind(tableView.comparatorProperty());
 
         tableView.setItems(sortedList);
@@ -57,31 +55,26 @@ public class OverviewCotroller implements Initializable
 
 
     ///////////////////////////////////Business Logic//////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private void addToObsList(ObservableList<MonthlyWeather> observableList)
+    private void addToObsList(ObservableList<AnnualWeather> observableList)
     {
 
-        List<List<MonthlyWeather>> weatherLists = new ArrayList<>(Factory.fileServices().readFiles(Factory.fileServices().getResourcesPath("org/openjfx/__MACOSX")));
-        List<MonthlyWeather> weathers = weatherLists.stream().flatMap(List::stream).collect(Collectors.toList());
-        for(int i = 0; i < weathers.size(); i++)
-        {
-            if(weathers.get(i).getYear() == 2019)
-            {
-                observableList.add(weathers.get(i));
-            }
-        }
+        List<List<MonthlyWeather>> weatherLists = Factory.fileServices().readFiles(Factory.fileServices().getResourcesPath());
+        List<AnnualWeather> annualWeatherList = Factory.weatherMath().getCalculatedAnnualWeathers(weatherLists, 2019);
+        observableList.addAll(annualWeatherList);
+
+
     }
 
     private void setCellValues()
     {
         station.setCellValueFactory(new PropertyValueFactory<>("station"));
-        month.setCellValueFactory(new PropertyValueFactory<>("month"));
-        tmax.setCellValueFactory(new PropertyValueFactory<>("tmax"));
-        tmin.setCellValueFactory(new PropertyValueFactory<>("tmin"));
-        af.setCellValueFactory(new PropertyValueFactory<>("af"));
-        rain.setCellValueFactory(new PropertyValueFactory<>("rain"));
+        tmax.setCellValueFactory(new PropertyValueFactory<>("highestTmaxNumber"));
+        tmin.setCellValueFactory(new PropertyValueFactory<>("lowestTminNumber"));
+        af.setCellValueFactory(new PropertyValueFactory<>("totalAf"));
+        rain.setCellValueFactory(new PropertyValueFactory<>("totalRainfall"));
     }
 
-    private void initfilerField (FilteredList<MonthlyWeather> filteredList)
+    private void initfilerField (FilteredList<AnnualWeather> filteredList)
     {
         filterField.textProperty().addListener((observable, oldValue, newValue) -> {
 

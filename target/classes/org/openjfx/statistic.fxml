@@ -37,7 +37,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="983.0">
                            <children>
-                                  <Label layoutY="-2.0" prefHeight="85.0" prefWidth="992.0" text="                 Monthly Records in                   in" textAlignment="CENTER">
+                                  <Label layoutY="-2.0" prefHeight="85.0" prefWidth="992.0" text="                 Monthly Records at                   in" textAlignment="CENTER">
                                       <font>
                                           <Font size="26.0" />
                                       </font>
@@ -53,14 +53,14 @@
                                  </opaqueInsets>
                               </ChoiceBox>
                               <Button fx:id="viewButton" layoutX="749.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="View" />
-                              <StackedBarChart fx:id="stackedBarChart" animated="false" layoutX="58.0" layoutY="99.0" legendSide="RIGHT" prefHeight="475.0" prefWidth="877.0">
+                              <LineChart fx:id="chart1" animated="false" layoutX="58.0" layoutY="99.0" legendSide="RIGHT" prefHeight="475.0" prefWidth="877.0">
                                 <xAxis>
                                   <CategoryAxis label="Month" side="BOTTOM" />
                                 </xAxis>
                                 <yAxis>
                                   <NumberAxis label="Number" prefHeight="426.0" prefWidth="100.0" side="LEFT" />
                                 </yAxis>
-                              </StackedBarChart>
+                              </LineChart>
                            </children>
                         </AnchorPane>
                   </content>

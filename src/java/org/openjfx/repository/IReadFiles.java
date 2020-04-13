@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface IReadFiles
 {
-    String getResourcesPath(String name);
+    String getResourcesPath();
     List<String> getFilteredFileNames(String path);
     List<MonthlyWeather> readFile (String filePath, String dataAddInFile);
     List<List<MonthlyWeather>> readFiles (String folderPath);
