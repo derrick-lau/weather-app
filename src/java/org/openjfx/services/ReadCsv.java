@@ -1,8 +1,5 @@
 package org.openjfx.services;
 
-import com.opencsv.bean.ColumnPositionMappingStrategy;
-import com.opencsv.bean.CsvToBean;
-import com.opencsv.bean.CsvToBeanBuilder;
 import org.openjfx.model.MonthlyWeather;
 import org.openjfx.repository.IReadFiles;
 
@@ -15,7 +12,6 @@ import java.util.*;
 
 public class ReadCsv implements IReadFiles
 {
-    ColumnPositionMappingStrategy strategy = new ColumnPositionMappingStrategy();
 
 
     @Override
@@ -85,7 +81,7 @@ public class ReadCsv implements IReadFiles
     {
         //Setup
 
-        FileReader fileReader = readFileSetup(csv);
+        BufferedReader fileReader = readFileSetup(csv);
 
         //Map a row to a bean
         List<MonthlyWeather> weathers = mapRowToBean(fileReader);
@@ -102,12 +98,9 @@ public class ReadCsv implements IReadFiles
 
     //////////////////////////Business Logic/////////////////////////////////////////////////////////////////////
 
-    private FileReader readFileSetup(String csv)
+    private BufferedReader readFileSetup(String csv)
     {
-        //Setup
-        strategy.setType(MonthlyWeather.class);
-        String[] columns = new String[] {"year", "month", "tmax", "tmin", "af", "rain"};
-        strategy.setColumnMapping(columns);
+
         FileReader fileReader = null;
         try
         {
@@ -117,30 +110,39 @@ public class ReadCsv implements IReadFiles
             e.printStackTrace();
         }
 
-        return fileReader;
+        BufferedReader reader = new BufferedReader(fileReader);
+
+        return reader;
     }
 
-    private List<MonthlyWeather> mapRowToBean (FileReader fileReader)
+    private List<MonthlyWeather> mapRowToBean (BufferedReader reader)
     {
-        CsvToBean<MonthlyWeather> csvToBean = null;
+
+        List<MonthlyWeather> monthlyWeathers = new ArrayList<>();
+        String line;
         try
         {
-            if (fileReader.read() > 0)
+            while ((line = reader.readLine()) != null)
             {
-                csvToBean = new CsvToBeanBuilder<MonthlyWeather>(fileReader)
-                        .withMappingStrategy(strategy)
-                        .withType(MonthlyWeather.class)
-                        .withSeparator(',')
-                        .build();
-            } else {
-                return new ArrayList<MonthlyWeather>();
+                String[] row = line.split(",");
+                monthlyWeathers.add(new MonthlyWeather(
+                        Integer.parseInt(row[0]),
+                        Integer.parseInt(row[1]),
+                        Double.parseDouble(row[2]),
+                        Double.parseDouble(row[3]),
+                        Integer.parseInt(row[4]),
+                        Double.parseDouble(row[5])
+                        ));
             }
-        } catch (IOException e)
+        }
+
+        catch (IOException e)
+
         {
             e.printStackTrace();
         }
 
-        return csvToBean.parse();
+        return monthlyWeathers;
     }
 
 

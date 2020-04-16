@@ -13,6 +13,15 @@ public class MonthlyWeather {
     public MonthlyWeather() {
     }
 
+    public MonthlyWeather(Integer year, Integer month, Double tmax, Double tmin, Integer af, Double rain) {
+        this.year = year;
+        this.month = month;
+        this.tmax = tmax;
+        this.tmin = tmin;
+        this.af = af;
+        this.rain = rain;
+    }
+
 
     public String getStation() {
         return station;

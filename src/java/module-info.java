@@ -1,7 +1,6 @@
 module weatherFX {
     requires javafx.controls;
     requires javafx.fxml;
-    requires opencsv;
     requires java.sql;
 
 
