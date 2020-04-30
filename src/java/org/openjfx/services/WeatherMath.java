@@ -91,8 +91,8 @@ public class WeatherMath implements IWeatherMath
 
         if(hit != 0) {
 
-            annualWeather.setAvgRainfall(annualWeather.getTotalRainfall()/12);
-            annualWeather.setAvgAf(annualWeather.getTotalAf()/12);
+            annualWeather.setAvgRainfall(annualWeather.getTotalRainfall()/(hit/12));
+            annualWeather.setAvgAf(annualWeather.getTotalAf()/(hit/12));
 
         } else {
 
