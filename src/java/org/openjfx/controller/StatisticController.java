@@ -48,12 +48,6 @@ public class StatisticController extends BaseMenuController
         addSeriesToXYChart(chart1);
     }
 
-
-    /////////////////////////Business Logic///////////////////////////////////////////////////////////////////////////////////
-
-
-
-
     private void initViewButton()
     {
         viewButton.setOnAction(e -> {
